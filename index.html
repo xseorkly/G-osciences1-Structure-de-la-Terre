@@ -5,124 +5,120 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Géosciences 1 – Structure de la Terre : le cours expliqué</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#f7f5f0; --paper:#fffdf8; --ink:#1d2327; --muted:#5b6670; --line:#e3ddd1;
-  --earth:#9a4a1f; --earth-soft:#f6e7dc; --sky:#1f5d8c; --sky-soft:#e3eef7;
-  --leaf:#2f6b3f; --leaf-soft:#e3f0e6; --warn:#a8321e; --warn-soft:#fbe6e1;
-  --gold:#8a6a10; --gold-soft:#f8f0d6;
-  --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
-}
+:root{color-scheme:light;--bg:#f3f5f6;--surface:#fff;--paper:#fff;--deep:#14314c;--ink:#243c50;--muted:#647587;--teal:#117b83;--blue:#e7f4f2;--line:#dfe6e9;--gold:#ecb85e;--good:#167558;--bad:#ad4b38;--shade:#f8fafb;--shadow:0 5px 24px rgba(12,36,55,.06);
+ --earth:#117b83;--earth-soft:#e7f4f2;--sky:#14314c;--sky-soft:#eef2f6;--leaf:#167558;--leaf-soft:#e8f3ee;--warn:#ad4b38;--warn-soft:#f8ebe7;--gold-t:#8a6416;--gold-soft:#fbf4e4;
+ --serif:Inter,'Segoe UI',system-ui,Arial,sans-serif;--sans:Inter,'Segoe UI',system-ui,Arial,sans-serif;font-family:var(--sans)}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
-a{color:var(--sky)}
-.layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
-nav.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:#1f262b;color:#d9dee2;padding:22px 16px 40px;font-size:14px}
-nav.side .brand{font-family:var(--serif);font-size:20px;color:#fff;line-height:1.25;margin-bottom:4px}
-nav.side .sub{color:#93a1ab;font-size:12.5px;margin-bottom:18px}
-nav.side h4{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#e9b48f;margin:20px 0 6px}
-nav.side h4.sk{color:#9cc6e8}
-nav.side a{display:block;color:#d9dee2;text-decoration:none;padding:5px 9px;border-radius:6px;line-height:1.35}
-nav.side a:hover{background:#2c363d}
-nav.side a.active{background:#e9b48f;color:#1f262b;font-weight:600}
-nav.side h4.sk + a.active, nav.side a.sk.active{background:#9cc6e8}
+a{color:var(--teal)}
+.layout{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+nav.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--deep);color:#dae5eb;padding:24px 16px 70px;font-size:.9rem}
+nav.side .brand{display:flex;gap:12px;align-items:center;color:#fff;font-weight:750;font-size:1.02rem;line-height:1.25;margin-bottom:4px}
+nav.side .brand .logo{flex:none;width:40px;height:40px;border-radius:10px;background:var(--blue);color:var(--deep);display:grid;place-items:center;font-weight:800;font-size:.95rem}
+nav.side .sub{color:#92abbc;font-size:.75rem;margin:6px 0 16px;padding-bottom:16px;border-bottom:1px solid #2b4964}
+nav.side h4{text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.64rem;color:#92abbc;margin:16px 0 4px;padding:0 12px}
+nav.side h4 span{text-transform:none;letter-spacing:0;font-weight:600}
+nav.side a{display:block;color:#dae5eb;text-decoration:none;padding:8px 12px;border-radius:10px;line-height:1.35;font-weight:550}
+nav.side a:hover{color:#fff;background:#315068}
+nav.side a.active{color:#fff;background:#315068;box-shadow:inset 3px 0 var(--gold)}
+.hubpill{position:fixed;bottom:14px;left:14px;z-index:9999;background:var(--deep);color:#fff;text-decoration:none;font:600 13px var(--sans);padding:8px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.2)}
 .burger{display:none}
-main{padding:40px 56px 100px;max-width:980px}
+main{padding:40px 52px 100px;max-width:1000px}
 section.page{display:none}
-section.page.show{display:block;animation:fade .25s ease}
+section.page.show{display:block;animation:fade .2s ease}
 @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
-.kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--earth)}
-.kicker.sky{color:var(--sky)}
-h1{font-family:var(--serif);font-size:38px;line-height:1.15;margin:6px 0 10px}
-h2{font-family:var(--serif);font-size:26px;margin:38px 0 10px;padding-top:8px;border-top:1px solid var(--line)}
-h3{font-size:18px;margin:26px 0 6px}
+.kicker{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}
+.kicker.sky{color:var(--teal)}
+h1{font-size:clamp(1.75rem,3vw,2.5rem);line-height:1.15;letter-spacing:-.03em;color:var(--deep);margin:8px 0 12px}
+h2{font-size:1.3rem;letter-spacing:-.015em;color:var(--deep);margin:36px 0 10px;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-size:1.05rem;color:#146d74;margin:24px 0 6px}
 p{margin:10px 0}
-.lead{font-size:18.5px;color:#36414a;font-family:var(--serif)}
-.box{border-radius:12px;padding:14px 18px;margin:16px 0;border:1px solid}
-.box b.t{display:block;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
-.idea{background:var(--sky-soft);border-color:#c3d8ea}.idea b.t{color:var(--sky)}
-.keep{background:var(--leaf-soft);border-color:#c4dccb}.keep b.t{color:var(--leaf)}
-.trap{background:var(--warn-soft);border-color:#f0c6bc}.trap b.t{color:var(--warn)}
-.analogy{background:var(--gold-soft);border-color:#ead9a6}.analogy b.t{color:var(--gold)}
+.lead{font-size:1.08rem;color:var(--ink)}
+.box{border-radius:14px;padding:14px 18px;margin:16px 0;border:1px solid var(--line);background:var(--surface);border-left:4px solid var(--teal)}
+.box b.t{display:block;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+.idea{border-left-color:var(--deep)}.idea b.t{color:var(--deep)}
+.keep{background:var(--blue);border-color:#cfe6e2;border-left-color:var(--teal)}.keep b.t{color:var(--teal)}
+.trap{border-left-color:var(--bad)}.trap b.t{color:var(--bad)}
+.analogy{border-left-color:var(--gold)}.analogy b.t{color:var(--gold-t)}
 .box ul{margin:4px 0;padding-left:20px}
-.formula{font-family:var(--serif);font-size:21px;text-align:center;background:var(--paper);border:1px dashed #cdbfa8;border-radius:10px;padding:12px;margin:14px 0}
-.formula small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:4px}
+.formula{font-size:1.15rem;text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;margin:14px 0;color:var(--deep);font-weight:600}
+.formula small{display:block;font-size:.8rem;color:var(--muted);margin-top:4px;font-weight:400}
 .frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px;font-size:.92em}
 .frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}
-table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14.5px;background:var(--paper)}
-th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
-th{background:#efe9de;font-weight:600}
-details.ex{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--earth);border-radius:10px;padding:12px 16px;margin:16px 0}
-details.ex.sky{border-left-color:var(--sky)}
-details.ex summary{cursor:pointer;font-weight:600}
-details.ex summary::marker{color:var(--earth)}
-.q{background:#faf7f1;border-radius:8px;padding:10px 14px;margin:8px 0}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:.9rem;background:var(--surface);border-radius:12px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+th,td{border-bottom:1px solid var(--line);padding:8px 11px;text-align:left;vertical-align:top}
+th{background:var(--shade);color:var(--deep);font-weight:700}
+details.ex{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--teal);border-radius:14px;padding:12px 16px;margin:16px 0;box-shadow:var(--shadow)}
+details.ex.sky{border-left-color:var(--deep)}
+details.ex summary{cursor:pointer;font-weight:700;color:var(--deep)}
+details.ex summary::marker{color:var(--teal)}
+.q{background:var(--shade);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:8px 0}
 .step{counter-increment:st;position:relative;padding-left:34px;margin:10px 0}
 .steps{counter-reset:st}
-.step::before{content:counter(st);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--earth);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
-.sky .step::before{background:var(--sky)}
-.ans{font-weight:700;color:var(--leaf)}
+.step::before{content:counter(st);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.sky .step::before{background:var(--deep)}
+.ans{font-weight:700;color:var(--good)}
 figure{margin:18px 0;text-align:center}
-figure svg{max-width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px}
-figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:18px 0}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:block}
-.card:hover{border-color:var(--earth)}
-.card .n{font-size:12px;font-weight:700;color:var(--earth);letter-spacing:.06em}
-.card.s .n{color:var(--sky)}
-.card h3{margin:4px 0 4px;font-size:17px}
-.card p{margin:0;color:var(--muted);font-size:14px}
-.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:#efe9de;margin:2px}
-.src{font-size:13px;color:var(--muted);font-style:italic}
+figure svg{max-width:100%;height:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);display:block;box-shadow:var(--shadow)}
+.card:hover{border-color:var(--teal)}
+.card .n{font-size:.72rem;font-weight:800;color:var(--teal);letter-spacing:.1em}
+.card.s .n{color:var(--teal)}
+.card h3{margin:6px 0 4px;font-size:1.05rem;color:var(--deep)}
+.card p{margin:0;color:var(--muted);font-size:.9rem}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--blue);color:#146d74;margin:2px}
+.src{font-size:.85rem;color:var(--muted);font-style:italic}
 .pager{display:flex;justify-content:space-between;margin-top:50px;gap:10px}
-.pager a{flex:1;background:var(--paper);border:1px solid var(--line);padding:12px 16px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600}
+.pager a{flex:1;background:var(--surface);border:1px solid var(--line);padding:12px 16px;border-radius:12px;text-decoration:none;color:var(--deep);font-weight:700}
+.pager a:hover{border-color:var(--teal)}
 .pager a.next{text-align:right}
-.pager a span{display:block;font-size:12px;color:var(--muted);font-weight:500}
-.alert{background:#1f262b;color:#fff;border-radius:12px;padding:16px 20px;margin:18px 0}
-.alert b{color:#e9b48f}
-/* quiz */
-.qz{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
-.qz .qt{font-weight:600;margin-bottom:8px}
-.qz label{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:5px 0;cursor:pointer}
-.qz label:hover{background:#faf7f1}
-.qz label.ok{background:var(--leaf-soft);border-color:#8bbf98}
-.qz label.ko{background:var(--warn-soft);border-color:#e09a8a}
-.qz .why{display:none;font-size:14px;margin-top:8px;color:#36414a}
+.pager a span{display:block;font-size:.75rem;color:var(--muted);font-weight:500}
+.alert{background:linear-gradient(135deg,#14314c,#1b4a5c);color:#fff;border-radius:16px;padding:18px 22px;margin:18px 0}
+.alert b{color:var(--gold)}
+.qz{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0;box-shadow:var(--shadow)}
+.qz .qt{font-weight:700;color:var(--deep);margin-bottom:8px}
+.qz label{display:block;padding:8px 11px;border:1px solid var(--line);border-radius:10px;margin:5px 0;cursor:pointer}
+.qz label:hover{background:var(--shade)}
+.qz label.ok{background:var(--leaf-soft);border-color:#9fcfb6}
+.qz label.ko{background:var(--warn-soft);border-color:#e3b2a6}
+.qz .why{display:none;font-size:.9rem;margin-top:8px;color:var(--ink)}
 .qz.done .why{display:block}
-.btn{background:var(--earth);color:#fff;border:0;border-radius:8px;padding:10px 18px;font-weight:600;font-size:15px;cursor:pointer}
-.btn.alt{background:var(--sky)}
-#score{font-weight:700;font-size:18px;margin-left:12px}
-.gl dt{font-weight:700;margin-top:12px}
-.gl dd{margin:2px 0 0 0;color:#36414a}
-.search{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;margin:10px 0}
+.btn{border:1px solid var(--teal);border-radius:10px;background:var(--teal);color:#fff;padding:10px 16px;font-weight:750;font-size:.89rem;cursor:pointer}
+.btn.alt{background:#fff;color:var(--deep);border-color:var(--line)}
+#score{font-weight:700;font-size:17px;margin-left:12px}
+.gl dt{font-weight:700;color:var(--deep);margin-top:12px}
+.gl dd{margin:2px 0 0 0;color:var(--ink)}
+.search{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;margin:10px 0;background:#fff}
 @media (max-width:900px){
   .layout{grid-template-columns:1fr}
-  nav.side{position:fixed;inset:0 25% 0 0;z-index:20;transform:translateX(-105%);transition:.25s;height:100%}
+  nav.side{position:fixed;inset:0 20% 0 0;z-index:20;transform:translateX(-105%);transition:.25s;height:100%}
   nav.side.open{transform:none}
-  .burger{display:block;position:fixed;top:10px;left:10px;z-index:30;background:#1f262b;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:15px}
+  .burger{display:block;position:fixed;top:10px;left:10px;z-index:30;background:var(--deep);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-size:15px}
   main{padding:60px 18px 80px}
-  h1{font-size:30px}
 }
 </style>
 </head>
 <body>
 <button class="burger" onclick="document.querySelector('nav.side').classList.toggle('open')">☰ Sommaire</button>
+<a class="hubpill" href="https://xseorkly.github.io/ysra-revision/">← Accueil des révisions</a>
 <div class="layout">
 <nav class="side">
-  <div class="brand">Géosciences 1<br>Structure de la Terre</div>
+  <div class="brand"><span class="logo">G1</span><span>Géosciences 1<br>Structure de la Terre</span></div>
   <div class="sub">L1 · Université de Strasbourg (EOST) · 2026-2027<br>Le cours entier, expliqué simplement</div>
-  <a href="https://xseorkly.github.io/ysra-revision/" style="background:#2c363d;margin-bottom:6px">← Accueil des révisions</a>
   <a href="#accueil">🏠 Accueil &amp; mode d'emploi</a>
   <a href="#organisation">📅 Organisation, examens, QCM</a>
-  <h4>Partie A · Enveloppes superficielles<br><span style="text-transform:none;letter-spacing:0">A.-D. Schmitt</span></h4>
+  <h4>Partie A · Enveloppes superficielles · <span>A.-D. Schmitt</span></h4>
   <a href="#a1">1.1–1.2 L'énergie du Soleil</a>
   <a href="#a2">1.3 Bilan radiatif &amp; effet de serre</a>
   <a href="#a3">1.4 Effets des activités humaines</a>
   <a href="#a4">2.1 Orbite &amp; cycles de Milankovic</a>
   <a href="#a5">2.2–2.4 Latitude, saisons, incidence</a>
   <a href="#a6">2.5–2.7 Redistribution &amp; climats</a>
-  <h4 class="sk">Partie B · Enveloppes internes<br><span style="text-transform:none;letter-spacing:0">F. Masson</span></h4>
+  <h4>Partie B · Enveloppes internes · <span>F. Masson</span></h4>
   <a href="#b0" class="sk">0. La Terre en couches</a>
   <a href="#b1" class="sk">1. La forme de la Terre</a>
   <a href="#b2" class="sk">2a. Histoire des modèles</a>
@@ -154,10 +150,10 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 <h2>Comment utiliser ce site</h2>
 <p>Chaque chapitre suit la même logique :</p>
 <div class="cards">
- <div class="card"><div class="n">BLEU</div><h3>💡 L'idée</h3><p>Ce qu'il faut comprendre, en une ou deux phrases.</p></div>
- <div class="card"><div class="n">JAUNE</div><h3>🔎 L'image mentale</h3><p>Une comparaison avec la vie courante pour fixer l'idée.</p></div>
- <div class="card"><div class="n">VERT</div><h3>✅ À retenir</h3><p>Les chiffres et définitions qui tombent au QCM.</p></div>
- <div class="card"><div class="n">ROUGE</div><h3>⚠️ Piège</h3><p>Les confusions classiques.</p></div>
+ <div class="card"><div class="n">ENCADRÉ BLEU NUIT</div><h3>💡 L'idée</h3><p>Ce qu'il faut comprendre, en une ou deux phrases.</p></div>
+ <div class="card"><div class="n">ENCADRÉ DORÉ</div><h3>🔎 L'image mentale</h3><p>Une comparaison avec la vie courante pour fixer l'idée.</p></div>
+ <div class="card"><div class="n">ENCADRÉ VERT D'EAU</div><h3>✅ À retenir</h3><p>Les chiffres et définitions qui tombent au QCM.</p></div>
+ <div class="card"><div class="n">ENCADRÉ ROUGE</div><h3>⚠️ Piège</h3><p>Les confusions classiques.</p></div>
 </div>
 <div class="box keep"><b class="t">✅ À la fin de chaque chapitre</b>Trois blocs : <b>🧠 À savoir par cœur</b> (à cocher au fur et à mesure), un <b>QCM du chapitre</b> corrigé et expliqué, et des <b>exercices d'entraînement</b> (énoncés vierges, puis corrigés cachés). Dans « Réviser », tu trouves <a href="#parcoeur">tout le par cœur</a> sur une page et les <a href="#qcm">examens blancs CC1 et CC2</a> (158 questions en banque, tirées au hasard).</div>
 <p>Les exercices posés en cours sont intégrés dans les chapitres (cadres dépliables « Exercice ») <i>et</i> regroupés dans la page <a href="#exos">Exercices corrigés</a>. Essaie toujours de chercher avant d'ouvrir la correction.</p>
@@ -394,7 +390,7 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 <h3>Modèle simple : la « vitre » atmosphérique</h3>
 <figure>
 <svg viewBox="0 0 640 300" role="img" aria-label="Modèle à une vitre de l'effet de serre">
- <rect x="0" y="0" width="640" height="300" fill="#fffdf8"/>
+ <rect x="0" y="0" width="640" height="300" fill="#ffffff"/>
  <text x="20" y="28" font-size="14" fill="#5b6670">ESPACE</text>
  <rect x="40" y="110" width="560" height="14" fill="#9cc6e8"/><text x="420" y="143" font-size="13" fill="#1f5d8c" text-anchor="middle">« vitre » = atmosphère</text>
  <rect x="40" y="250" width="560" height="30" fill="#c99b6d"/><text x="320" y="270" font-size="13" text-anchor="middle" fill="#fff">SOL</text>
@@ -575,7 +571,7 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 <p>La latitude est un angle qui repère un point au nord ou au sud de l'équateur (0° à l'équateur, 90° aux pôles). Tous les points de même latitude forment un cercle parallèle à l'équateur : un <b>parallèle</b>. Repères : <b>tropique du Cancer</b> (23,4° N), <b>tropique du Capricorne</b> (23,4° S), cercles polaires (66,6°).</p>
 <figure>
 <svg viewBox="0 0 640 230" role="img" aria-label="Même faisceau, surface différente">
- <rect width="640" height="230" fill="#fffdf8"/>
+ <rect width="640" height="230" fill="#ffffff"/>
  <g stroke="#e0a100" stroke-width="3"><line x1="80" y1="20" x2="80" y2="150"/><line x1="140" y1="20" x2="140" y2="150"/></g>
  <rect x="60" y="150" width="100" height="10" fill="#c99b6d"/><line x1="80" y1="150" x2="140" y2="150" stroke="#a8321e" stroke-width="5"/>
  <text x="150" y="185" font-size="13" text-anchor="middle">Soleil haut (équateur, été)</text><text x="150" y="203" font-size="13" text-anchor="middle" fill="#a8321e">petite surface → beaucoup d'énergie/m²</text>
@@ -724,7 +720,7 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 
 <figure>
 <svg viewBox="0 0 800 360" role="img" aria-label="Coupe de la Terre">
-<rect width="800" height="360" fill="#fffdf8"/>
+<rect width="800" height="360" fill="#ffffff"/>
 <g transform="translate(180,180)">
 <circle r="160" fill="#c46a3a"/><circle r="157" fill="#e6a15a"/>
 <circle r="88" fill="#e9c46a"/><circle r="31" fill="#f3e3a2"/>
@@ -826,7 +822,7 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 <p><b>Pythagore</b> (VIᵉ s. av. J.-C.) propose le premier que la Terre est sphérique. <b>Ératosthène</b> (275-195 av. J.-C.) en fait la première mesure. Au solstice d'été, à midi, le Soleil est exactement à la verticale à <b>Syène</b> (il éclaire le fond d'un puits) alors qu'à <b>Alexandrie</b>, plus au nord, un bâton fait une ombre : les rayons y arrivent avec un angle de <b>7,2°</b>. Les deux villes sont à 5 000 stades (1 stade ≈ 185 m, donc ~925 km).</p>
 <figure>
 <svg viewBox="0 0 640 260" role="img" aria-label="Méthode d'Ératosthène">
-<rect width="640" height="260" fill="#fffdf8"/>
+<rect width="640" height="260" fill="#ffffff"/>
 <circle cx="200" cy="250" r="190" fill="#e3eef7" stroke="#1f5d8c"/>
 <line x1="200" y1="250" x2="200" y2="60" stroke="#1f5d8c" stroke-dasharray="4 3"/>
 <line x1="200" y1="250" x2="152" y2="66" stroke="#1f5d8c" stroke-dasharray="4 3"/>
@@ -945,7 +941,7 @@ figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
 <p>Modèle : une croûte d'épaisseur h et de vitesse V₁ posée sur un manteau de vitesse V₂ &gt; V₁, Moho horizontal, séisme en surface, station à la distance x.</p>
 <figure>
 <svg viewBox="0 0 660 260" role="img" aria-label="Onde directe, réfléchie, conique">
-<rect width="660" height="260" fill="#fffdf8"/>
+<rect width="660" height="260" fill="#ffffff"/>
 <rect x="20" y="40" width="620" height="110" fill="#f6e7dc"/><rect x="20" y="150" width="620" height="90" fill="#e3eef7"/>
 <text x="30" y="140" font-size="13">croûte V₁</text><text x="30" y="232" font-size="13">manteau V₂ &gt; V₁</text>
 <text x="600" y="165" font-size="12" text-anchor="end" fill="#1f5d8c">Moho</text>
@@ -1387,7 +1383,7 @@ Le profil est d'abord raide (≈ 20 °C/km en surface : q₀/K) puis devient une
 </table>
 <figure>
 <svg viewBox="0 0 640 330" role="img" aria-label="Géotherme schématique">
-<rect width="640" height="330" fill="#fffdf8"/>
+<rect width="640" height="330" fill="#ffffff"/>
 <line x1="70" y1="30" x2="70" y2="290" stroke="#1d2327"/><line x1="70" y1="290" x2="610" y2="290" stroke="#1d2327"/>
 <text x="340" y="320" font-size="13" text-anchor="middle">Profondeur (km)</text>
 <text x="22" y="160" font-size="13" transform="rotate(-90 22 160)" text-anchor="middle">Température (K)</text>
