@@ -1,0 +1,215 @@
+<!-- ===================== B5 ===================== -->
+<section class="page" id="b5">
+<div class="kicker sky">Partie B · Chapitre 3</div>
+<h1>Masse de la Terre et modèles de densité</h1>
+<p class="lead">On ne peut pas poser la Terre sur une balance. Pourtant on connaît sa masse à 0,01 % près, et même comment elle se répartit à l'intérieur. Deux outils : la gravitation (Newton, Kepler) et le moment d'inertie.</p>
+<h2>Les chiffres de base</h2>
+<div class="box keep"><b class="t">✅ À retenir</b><ul>
+<li>Masse : <b>M<sub>T</sub> = 5,9722 × 10²⁴ kg</b></li>
+<li>Masse volumique moyenne (exercice 14) : ρ<sub>T</sub> = M<sub>T</sub>/V<sub>T</sub> = 5,9722 × 10²⁴ / 1,083 × 10²¹ m³ ≈ <b>5 510 kg/m³</b> (densité 5,51), alors que les roches de surface ont une densité de ~2,7 → l'intérieur est forcément beaucoup plus dense.</li>
+<li>Densité = masse volumique en g/cm³ ; en unités SI (kg/m³) : <b>ρ = 1 000 × densité</b>.</li>
+<li>Pression au centre : P ≈ ρ g z ≈ 6 300 × 10 × 6,371 × 10⁶ ≈ 4 × 10¹¹ Pa = <b>400 GPa</b> = 4 000 kbar (≈ 4 millions de fois la pression atmosphérique). 1 Pa = 10⁻⁵ bar ; 1 GPa = 10 kbar.</li></ul></div>
+
+<h3>Densités des matériaux (diapo 105)</h3>
+<table><tr><th>Matériau</th><th>Densité</th><th>Matériau</th><th>Densité</th></tr>
+<tr><td>Moyenne de la Terre</td><td><b>5,5</b></td><td>Péridotite</td><td>3,1 à 3,4</td></tr>
+<tr><td>Moyenne de la croûte continentale</td><td><b>2,67</b></td><td>Gabbros</td><td>2,7 à 3,3</td></tr>
+<tr><td>Sédiments non consolidés</td><td>1,8 à 2,0</td><td>Basaltes</td><td>2,7 à 3,1</td></tr>
+<tr><td>Sables secs / humides</td><td>1,4-1,65 / 1,9-2,05</td><td>Granites</td><td>2,5 à 2,7</td></tr>
+<tr><td>Grès</td><td>2,0 à 2,5</td><td>Gneiss</td><td>2,65 à 2,75</td></tr>
+<tr><td>Calcaires</td><td>2,4 à 2,8</td><td>Glace</td><td>0,88 à 0,92</td></tr>
+<tr><td>Sel</td><td>2,1 à 2,4</td><td>Eau de mer</td><td>1,01 à 1,05</td></tr>
+<tr><td>Hématite / magnétite</td><td>5,0-5,2 / 5,1-5,3</td><td><b>Fer</b></td><td><b>7,3 à 7,8</b></td></tr>
+<tr><td>Cuivre / argent</td><td>8,8-8,9 / 10,1-11,1</td><td>Or</td><td>15,6 à 19,4</td></tr></table>
+<p>Aucune roche de surface n'atteint 5,5 : il faut un matériau bien plus dense en profondeur (le fer, comprimé). La diapo 107 montre que densité et pression augmentent avec la profondeur, avec un saut net au noyau.</p>
+<h2>La masse à partir de g</h2>
+<p>Loi de la gravitation universelle de Newton : deux masses s'attirent avec une force F = G m M / d². À la surface, le poids d'un objet de masse m est aussi F = m g. Donc :</p>
+<div class="formula">g = <span class="frac"><span>G M<sub>T</sub></span><span>R<sub>T</sub>²</span></span> &nbsp;⟹&nbsp; M<sub>T</sub> = <span class="frac"><span>g R<sub>T</sub>²</span><span>G</span></span><small>G = 6,674 × 10⁻¹¹ m³·kg⁻¹·s⁻² (ou N·m²·kg⁻²)</small></div>
+<details class="ex sky"><summary>Exercice 15 — Calculer M<sub>T</sub> avec g = 9,81 m/s²</summary>
+<p>M<sub>T</sub> = 9,81 × (6,371 × 10⁶)² / 6,674 × 10⁻¹¹ ≈ <span class="ans">5,97 × 10²⁴ kg</span>. ✔</p>
+<div class="box trap"><b class="t">⚠️ Unités</b>R<sub>T</sub> en <b>mètres</b> (6,371 × 10⁶ m), pas en km !</div></details>
+
+<h2>Mesurer G : l'expérience de Cavendish (1798)</h2>
+<p>Une <b>balance de torsion</b> : une tige portant deux petites boules (masse m) est suspendue à un fil fin. On approche deux grosses boules (masse M). L'attraction fait tourner la tige d'un petit angle α, jusqu'à ce que la torsion du fil (couple de rappel αC, C = raideur du fil) équilibre le couple des forces d'attraction 2(GmM/d²)·R. En mesurant α, on obtient G.</p>
+<p>Résultat de Cavendish : G = 6,754 × 10⁻¹¹ ; valeur actuelle : 6,674 × 10⁻¹¹ m³·kg⁻¹·s⁻². Cavendish a ainsi « pesé la Terre ».</p>
+
+<h2>La masse à partir des satellites (3ᵉ loi de Kepler)</h2>
+<p>On mesure en fait très précisément le produit <b>μ<sub>T</sub> = G M<sub>T</sub></b> (constante géocentrique), grâce aux orbites des satellites, puis M<sub>T</sub> = μ<sub>T</sub>/G. Pour un satellite de masse négligeable, la 3ᵉ loi de Kepler s'écrit :</p>
+<div class="formula"><span class="frac"><span>a³</span><span>T²</span></span> = <span class="frac"><span>G M<sub>T</sub></span><span>4π²</span></span><small>a = demi-grand axe de l'orbite (rayon pour une orbite circulaire), T = période</small></div>
+<details class="ex sky"><summary>Exercice 16 — GM<sub>T</sub> avec un satellite géostationnaire à 35 784 km d'altitude</summary>
+<div class="steps sky">
+<div class="step">Le satellite géostationnaire tourne avec la Terre : T = 1 jour sidéral = 23 h 56 min 4 s = <b>86 164 s</b> (pas 86 400 s !).</div>
+<div class="step">Rayon de l'orbite : a = 6 378 + 35 784 = 42 162 km ≈ 4,216 × 10⁷ m (on prend le rayon équatorial).</div>
+<div class="step">GM<sub>T</sub> = 4π² a³ / T² ≈ <span class="ans">3,98 × 10¹⁴ m³/s²</span>.</div>
+<div class="step">Vérification : G × M<sub>T</sub> = 6,674 × 10⁻¹¹ × 5,9722 × 10²⁴ = 3,986 × 10¹⁴ m³/s². ✔</div>
+</div></details>
+
+<h2>Comment la masse se répartit-elle ?</h2>
+<details class="ex sky"><summary>Exercice 17 — Densité au centre si elle augmente linéairement avec la profondeur</summary>
+<div class="q">On suppose ρ(r) = ρ₀ + (ρ<sub>s</sub> − ρ₀) r/R, avec ρ<sub>s</sub> = 2 600 kg/m³ en surface et ρ₀ au centre. Données : g = 9,81 m/s², R = 6 370 km, G = 6,67 × 10⁻¹¹.</div>
+<div class="steps sky">
+<div class="step">On découpe la Terre en coquilles d'épaisseur dr : dM = ρ(r) × 4πr² dr. On intègre de 0 à R :<br>M = 4π ∫₀<sup>R</sup> [ρ₀ + (ρ<sub>s</sub> − ρ₀) r/R] r² dr = 4πR³ [ρ₀/3 + (ρ<sub>s</sub> − ρ₀)/4] = <b>πR³ (ρ₀ + 3ρ<sub>s</sub>)/3</b>.</div>
+<div class="step">On connaît M = gR²/G ≈ 5,97 × 10²⁴ kg. On isole ρ₀ : ρ₀ = 3M/(πR³) − 3ρ<sub>s</sub>.</div>
+<div class="step">ρ₀ ≈ <span class="ans">14 200 kg/m³</span> (densité ~14).</div>
+</div>
+<p>Ordre de grandeur correct (la graine a une densité ~13). Mais la vraie Terre n'est pas linéaire : la densité fait un <b>saut</b> brutal au noyau.</p></details>
+
+<h3>Le moment d'inertie</h3>
+<p>Le <b>moment d'inertie</b> I mesure la façon dont la masse est répartie autour d'un axe de rotation, et donc la difficulté à faire tourner l'objet (unité kg·m²). Il est d'autant plus grand que la masse est <b>loin de l'axe</b>. C'est l'équivalent, pour la rotation, de la masse pour un mouvement en ligne droite.</p>
+<div class="box analogy"><b class="t">🔎 L'exemple du balai</b>Tenu par le milieu du manche, un balai tourne facilement autour de l'axe du manche (toute la masse est proche de l'axe), mais difficilement autour d'un axe perpendiculaire (la brosse, lourde, est loin de l'axe). Même masse, moment d'inertie très différent.</div>
+<div class="formula">Cylindre plein (axe) : I = ½ M R² &nbsp;·&nbsp; Sphère homogène : I = <sup>2</sup>⁄<sub>5</sub> M R² = 0,4 M R²<small>Le cours fait le calcul par rapport à un axe puis par rapport au centre, avec I = (I<sub>x</sub> + I<sub>y</sub> + I<sub>z</sub>)/3 (les trois axes sont équivalents pour une sphère).</small></div>
+<details class="ex sky"><summary>Exercices 18 et 19 — Moments d'inertie d'un cylindre et d'une sphère homogènes</summary>
+<div class="steps sky">
+<div class="step"><b>Cylindre</b> (rayon R, hauteur h, masse volumique ρ) : on découpe en tubes de rayon r, épaisseur dr, masse dm = ρ·2πr h dr, chacun à la distance r de l'axe : I = ∫₀<sup>R</sup> r² ρ 2πrh dr = ρ2πh R⁴/4 = ½ (ρπR²h) R² = <span class="ans">½ M R²</span>.</div>
+<div class="step"><b>Sphère, par rapport au centre</b> : coquilles dm = ρ4πr² dr à la distance r : I₀ = ∫ r² ρ 4πr² dr = 4πρR⁵/5 = (3/5) M R².</div>
+<div class="step"><b>Sphère, par rapport à un axe</b> : I<sub>x</sub> + I<sub>y</sub> + I<sub>z</sub> = 2 I₀ (chaque r² = x²+y²+z² est compté deux fois), et les trois sont égaux, donc I<sub>axe</sub> = 2I₀/3 = <span class="ans">0,4 M R²</span>.</div>
+</div></details>
+<details class="ex sky"><summary>Exercice 20 — Ce que dit I<sub>T</sub> = 0,33 M R² sur l'intérieur de la Terre</summary>
+<div class="steps sky">
+<div class="step"><b>Interprétation</b> : une sphère homogène aurait 0,4 MR². La Terre a 0,33 MR², plus petit : sa masse est <b>concentrée vers le centre</b> → il y a un noyau dense.</div>
+<div class="step"><b>Modèle à 2 couches</b> : noyau (rayon r<sub>N</sub> = 3 480 km, masse volumique ρ<sub>N</sub>) + manteau (ρ<sub>M</sub>). On pose x = r<sub>N</sub>/R = 0,546.</div>
+<div class="step"><b>Égalité des masses</b> : ρ<sub>M</sub>(1 − x³) + ρ<sub>N</sub> x³ = ρ<sub>T</sub> = 5 510.</div>
+<div class="step"><b>Égalité des moments d'inertie</b> (I d'une boule ∝ ρR⁵) : ρ<sub>M</sub>(1 − x⁵) + ρ<sub>N</sub> x⁵ = ρ<sub>T</sub> × 0,33/0,4.</div>
+<div class="step">On résout le système : <span class="ans">ρ<sub>M</sub> ≈ 4 100 kg/m³ et ρ<sub>N</sub> ≈ 12 600 kg/m³</span>. Très proche des vraies valeurs moyennes !</div>
+</div></details>
+<div class="chapblock" data-ch="b5"></div>
+<div class="pager"><a href="#b4"><span>← Précédent</span>Manteau, noyau, rais</a><a class="next" href="#b6"><span>Suivant →</span>Chimie de la Terre</a></div>
+</section>
+
+<!-- ===================== B6 ===================== -->
+<section class="page" id="b6">
+<div class="kicker sky">Partie B · Chapitre 4</div>
+<h1>La chimie de la Terre</h1>
+<p class="lead">Les discontinuités sismiques ne sont pas seulement des changements physiques : ce sont souvent des changements de matériaux. De quoi est faite chaque couche ?</p>
+<h2>Minéral et roche</h2>
+<ul><li>Un <b>minéral</b> a une formule chimique précise et, le plus souvent, une structure <b>cristalline</b> : un motif de base (la <b>maille</b>) répété dans toutes les directions. Ex. : quartz SiO₂, olivine (Mg,Fe)₂SiO₄.</li>
+<li>Une <b>roche</b> est un assemblage naturel et assez homogène de minéraux (ou de morceaux de roches). Ex. : granite = quartz + feldspaths + micas.</li></ul>
+<h2>Les éléments majeurs</h2>
+<p>98 % de la masse de la Terre est faite de 9 éléments : <b>O, Si, Mg, Fe, Ca, Na, K, Al, Ti</b>. La <b>silice</b> (SiO₂) existe libre (quartz) ou combinée à d'autres oxydes (Al₂O₃, FeO, MgO, CaO, Na₂O, K₂O) dans les <b>silicates</b>, constituants principaux de la croûte et du manteau.</p>
+<h2>Couche par couche</h2>
+<table>
+<tr><th>Enveloppe</th><th>Roches</th><th>Caractéristiques</th></tr>
+<tr><td>Croûte continentale</td><td><b>granite</b>, gneiss (et sédiments)</td><td>riche en silice, Al, K, Na ; légère (d = 2,7) ; vieille (jusqu'à 4 Ga)</td></tr>
+<tr><td>Croûte océanique</td><td><b>basalte</b> (en surface) et <b>gabbro</b> (en profondeur)</td><td>moins de silice, plus de Fe, Mg, Ca ; plus dense (d = 3,0) ; jeune (&lt; 200 Ma)</td></tr>
+<tr><td>Manteau</td><td><b>péridotite</b> (olivine + pyroxènes)</td><td>très pauvre en silice, riche en Mg ; d = 3,3 en surface</td></tr>
+<tr><td>Noyau</td><td>alliage <b>fer-nickel</b> + ~10 % d'éléments légers (S, O, Si…)</td><td>d ≈ 10-13</td></tr>
+</table>
+
+<h3>La croûte océanique en coupe (diapo 127)</h3>
+<p>De haut en bas : <b>basaltes en coussins</b> (pillow-lavas, ~1 000 m, lave refroidie dans l'eau), <b>basaltes en filons</b> (~1 500 m), <b>gabbros massifs</b> puis <b>gabbros lités</b> (~4 500 m), puis la <b>péridotite</b> du manteau. Basalte et gabbro ont la même composition : le basalte a refroidi vite (petits cristaux, roche microlitique), le gabbro lentement en profondeur (gros cristaux, roche grenue).</p>
+<h3>Les minéraux de chaque enveloppe (diapo 128)</h3>
+<table><tr><th>Enveloppe</th><th>Minéraux principaux</th><th>Formule</th></tr>
+<tr><td>Croûte continentale (d = 2,7)</td><td>quartz ; feldspath orthose ; feldspaths plagioclases</td><td>SiO₂ ; (Si₃AlO₈)K ; (Si₃AlO₈)Na à (Si₂Al₂O₈)Ca</td></tr>
+<tr><td>Croûte océanique (d = 2,9)</td><td>feldspaths plagioclases ; pyroxènes</td><td>(Si₃AlO₈)Na – (Si₂Al₂O₈)Ca ; (SiO₃)(Fe,Mg) – (SiO₃)(Ca,Mg)</td></tr>
+<tr><td>Manteau supérieur (d = 3,3)</td><td>olivine</td><td>(SiO₄)(Fe,Mg)₂</td></tr></table>
+<p><b>Composition chimique en % de masse</b> (Lizeaux, Baude et al., 2007) :</p>
+<table><tr><th>Roche</th><th>O</th><th>Si</th><th>Al</th><th>Fe</th><th>Mg</th><th>Ca</th><th>Na</th><th>K</th></tr>
+<tr><td>Granite</td><td>47,4</td><td>32,7</td><td>7,6</td><td>2,2</td><td>0,5</td><td>1,4</td><td>2,4</td><td>4,1</td></tr>
+<tr><td>Granodiorite</td><td>47,2</td><td>31,2</td><td>8,3</td><td>2,9</td><td>1,0</td><td>2,5</td><td>2,9</td><td>2,6</td></tr>
+<tr><td>Diorite / andésite</td><td>45,2</td><td>26,6</td><td>8,8</td><td>4,9</td><td>2,5</td><td>4,8</td><td>3,3</td><td>1,9</td></tr>
+<tr><td>Basalte / gabbro</td><td>43,5</td><td>23,7</td><td>7,5</td><td>8,4</td><td>3,8</td><td>7,4</td><td>1,7</td><td>0,7</td></tr></table>
+<p>À retenir : <b>l'oxygène est l'élément le plus abondant de la croûte</b> (~45 %), puis le silicium. Du granite au basalte, Si, K et Na diminuent ; Fe, Mg et Ca augmentent.</p>
+<h3>Comment connaît-on le manteau ?</h3>
+<ul>
+<li><b>Ophiolites</b> : morceaux de lithosphère océanique (avec du manteau) charriés sur les continents par la tectonique (ex. Oman, Chenaillet dans les Alpes).</li>
+<li><b>Enclaves</b> : fragments de manteau remontés par des laves (péridotites vertes dans les basaltes).</li>
+<li><b>Cellule à enclumes de diamant</b> : en laboratoire, on écrase un minuscule échantillon entre deux diamants (le matériau le plus dur) et on le chauffe au laser : on recrée les pressions et températures du manteau profond, inaccessible à l'échantillonnage.</li>
+</ul>
+<p>Le manteau n'a pas de grand saut sismique, seulement de petites discontinuités : sa <b>composition change peu</b> avec la profondeur. Les petits sauts s'expliquent par des changements de <b>structure cristalline</b> de l'olivine sous la pression :</p>
+<table>
+<tr><th>Profondeur</th><th>Transformation</th></tr>
+<tr><td>~410 km</td><td>olivine α → structure <b>spinelle</b> (olivines β puis γ ; wadsleyite, ringwoodite) : les atomes se resserrent</td></tr>
+<tr><td>~670 km</td><td>→ structure <b>pérovskite</b> (= <b>bridgmanite</b>) : les tétraèdres SiO₄ deviennent des octaèdres SiO₆</td></tr>
+<tr><td>~2 700 km (couche D″)</td><td>→ <b>post-pérovskite</b></td></tr>
+</table>
+<div class="box analogy"><b class="t">🔎 Image mentale</b>Même composition, rangement plus serré : comme des oranges dans une caisse qu'on tasse. Le matériau devient plus dense et les ondes vont plus vite, sans changer de « recette ».</div>
+
+<h3>Comment connaît-on le noyau ?</h3>
+<p>Le modèle minéralogique du manteau (diapo 134) : olivine + pyroxène + plagioclase près de la surface, puis + spinelle, puis + grenat ; wadsleyite vers 410 km, ringwoodite vers 520 km, <b>bridgmanite + magnésiowüstite</b> sous 670 km. La synthèse (diapo 137) : croûtes riches en O, Si, Al ; manteau riche en O, Si, <b>Mg</b>, Fe ; noyau = <b>Fe + Ni</b> (+ un peu d'O ?). Densités moyennes : ~2-3 (croûte), ~5 (manteau), ~11-13 (noyau).</p>
+<p>Totalement inaccessible : on raisonne indirectement.</p>
+<div class="steps sky">
+<div class="step">Les <b>météorites</b> sont des astéroïdes ou fragments tombés sur Terre. Les <b>chondrites</b> n'ont jamais été différenciées : elles représentent la matière du Système solaire à sa naissance, donc la <b>composition globale de la Terre</b>.</div>
+<div class="step">D'autres astéroïdes, plus gros, se sont différenciés comme la Terre : ils ont donné des <b>météorites de fer</b> (leur ancien noyau) et des <b>achondrites</b> (leur enveloppe silicatée).</div>
+<div class="step">On connaît la composition du <b>manteau</b>. <b>Composition de la Terre (chondrites) − composition du manteau = composition du noyau</b> : du fer et du nickel.</div>
+<div class="step">La densité sismique du noyau est un peu trop <b>faible</b> pour du fer-nickel pur : il contient aussi ~10 % d'éléments légers.</div>
+</div>
+<div class="chapblock" data-ch="b6"></div>
+<div class="pager"><a href="#b5"><span>← Précédent</span>Masse &amp; densité</a><a class="next" href="#b7"><span>Suivant →</span>La chaleur de la Terre</a></div>
+</section>
+
+<!-- ===================== B7 ===================== -->
+<section class="page" id="b7">
+<div class="kicker sky">Partie B · Chapitre 5</div>
+<h1>La chaleur de la Terre</h1>
+<p class="lead">Volcans, séismes, flux de chaleur : la Terre libère en permanence de l'énergie. D'où vient-elle, combien, et comment sort-elle ?</p>
+<h2>Unités</h2>
+<p><b>Énergie</b> en joules : 1 J = 1 N·m = 1 kg·m²·s⁻². <b>Puissance</b> (énergie par seconde) en watts : 1 W = 1 J/s.</p>
+<h2>Les manifestations énergétiques</h2>
+<table>
+<tr><th>Phénomène</th><th>Exemples</th><th>Puissance moyenne totale</th></tr>
+<tr><td>Volcanisme</td><td>Tambora 1815 : 8,4 × 10¹⁶ J ; St Helens 1980 : 1,9 × 10¹⁶ J ; sans oublier les dorsales</td><td>~8 × 10¹¹ W</td></tr>
+<tr><td>Séismes</td><td>Chili 1960 (M 9,4-9,5) : 1,0 × 10¹⁹ J</td><td>~1 × 10¹² W</td></tr>
+<tr><td><b>Flux de chaleur</b></td><td>en moyenne <b>80 mW/m²</b> ; la température augmente de ~30 °C/km près de la surface</td><td><b>4,2 × 10¹³ W</b> (≈ 42 TW)</td></tr>
+</table>
+<p>Le tableau-bilan du cours (diapo 147) :</p>
+<table><tr><th>Processus</th><th>Puissance moyenne (mW/m²)</th><th>Puissance globale (W)</th></tr>
+<tr><td>Surrection des montagnes</td><td>0,014</td><td>7 × 10⁹</td></tr>
+<tr><td>Tremblements de terre</td><td>2</td><td>10¹²</td></tr>
+<tr><td>Volcanisme (dorsales, points chauds)</td><td>1,6</td><td>8 × 10¹¹</td></tr>
+<tr><td><b>Flux de chaleur à la surface</b></td><td><b>82</b></td><td><b>4,2 × 10¹³</b></td></tr>
+<tr><td>Champ magnétique (extérieur au noyau)</td><td>—</td><td>10⁸</td></tr>
+<tr><td>Rayonnement solaire reçu à la surface</td><td>1,395 × 10⁶</td><td>7,1 × 10¹⁷</td></tr></table>
+<p>D'où le résumé visuel de la diapo : <b>montagnes ~ séismes &lt; flux de chaleur ≪ Soleil</b>.</p>
+<div class="box keep"><b class="t">✅ À retenir</b>Volcans et séismes, bien que spectaculaires, sont <b>négligeables</b> : l'essentiel de l'énergie interne sort lentement et silencieusement par le <b>flux de chaleur</b> (≈ 40 fois plus).</div>
+<details class="ex sky"><summary>Exercice 21 — Flux de chaleur des continents et des océans</summary>
+<table><tr><th>Continents</th><th>mW/m²</th><th>Océans</th><th>mW/m²</th></tr>
+<tr><td>Afrique</td><td>49,8</td><td>Atlantique Nord</td><td>67,4</td></tr>
+<tr><td>Am. du Sud</td><td>52,7</td><td>Atlantique Sud</td><td>59,0</td></tr>
+<tr><td>Am. du Nord</td><td>54,4</td><td>Océan Indien</td><td>83,3</td></tr>
+<tr><td>Australie</td><td>63,6</td><td>Pacifique Nord</td><td>95,4</td></tr>
+<tr><td>Europe &amp; Asie</td><td>60,2</td><td>Pacifique Sud</td><td>77,4</td></tr>
+<tr><td></td><td></td><td>Bassins marginaux</td><td>71,1</td></tr></table>
+<div class="steps sky">
+<div class="step"><b>Moyennes</b> : q<sub>c</sub> = (49,8 + 52,7 + 54,4 + 63,6 + 60,2)/5 ≈ <span class="ans">56 mW/m²</span> ; q<sub>o</sub> = (67,4 + 59,0 + 83,3 + 95,4 + 77,4 + 71,1)/6 ≈ <span class="ans">76 mW/m²</span>.</div>
+<div class="step"><b>Pourquoi les océans dégagent plus ?</b> La lithosphère océanique est <b>mince et jeune</b> : elle est créée chaude aux dorsales et la chaleur du manteau la traverse facilement. Les continents ont une lithosphère épaisse et vieille, qui isole (même si leur croûte produit plus de chaleur radioactive).</div>
+<div class="step"><b>Atlantique vs Pacifique</b> : le Pacifique a des dorsales plus <b>rapides</b> (expansion jusqu'à ~15 cm/an contre ~2-3 cm/an) : sa lithosphère est en moyenne plus jeune et plus chaude, d'où un flux plus fort.</div>
+<div class="step"><b>Totaux</b> : surface de la Terre S = 4πR² ≈ 5,1 × 10¹⁴ m². Q<sub>c</sub> = 0,056 × 0,3 S ≈ <span class="ans">8,6 × 10¹² W</span> ; Q<sub>o</sub> = 0,076 × 0,7 S ≈ <span class="ans">2,7 × 10¹³ W</span>. Total ≈ 3,6 × 10¹³ W (un peu moins que 4,2 × 10¹³ car ces moyennes sous-estiment le flux très fort près des dorsales).</div>
+</div></details>
+
+<h2>D'où vient la chaleur ? Deux sources</h2>
+<h3>1. Le refroidissement séculaire (la chaleur « initiale »)</h3>
+<p>La Terre était très chaude à sa naissance et se refroidit lentement depuis. Origines de cette chaleur initiale :</p>
+<ul>
+<li>l'<b>accrétion</b> : les corps arrivaient à grande vitesse, et l'énergie cinétique des chocs s'est transformée en chaleur ;</li>
+<li>des éléments radioactifs à <b>vie courte</b>, aujourd'hui disparus (²⁶Al, période 720 000 ans ; ⁶⁰Fe, 2,6 millions d'années) ;</li>
+<li>la <b>différenciation</b> (le fer qui « tombe » au centre libère de l'énergie gravitationnelle).</li>
+</ul>
+<p>Aujourd'hui encore, le noyau liquide se refroidit et <b>cristallise</b> : la graine grossit et libère de la chaleur latente de cristallisation et de l'énergie gravitationnelle. Contribution difficile à estimer, probablement minoritaire : au plus <b>1,5 × 10¹³ W</b>.</p>
+<p>Avant la découverte de la radioactivité (fin XIXᵉ), on pensait que toute la chaleur était résiduelle (c'est ainsi que Kelvin avait calculé un âge de la Terre beaucoup trop jeune).</p>
+<h3>2. La désintégration radioactive</h3>
+<p>Pour chauffer significativement, un isotope doit avoir une <b>demi-vie</b> comparable à l'âge de la Terre et être <b>assez abondant</b>. Il y en a 4, présents dans la croûte et le manteau :</p>
+<table><tr><th>Isotope</th><th>Devient</th><th>Demi-vie</th></tr>
+<tr><td>²³⁸U</td><td>²⁰⁶Pb</td><td>4,5 × 10⁹ ans</td></tr>
+<tr><td>²³⁵U</td><td>²⁰⁷Pb</td><td>0,71 × 10⁹ ans</td></tr>
+<tr><td>²³²Th</td><td>²⁰⁸Pb</td><td>14 × 10⁹ ans</td></tr>
+<tr><td>⁴⁰K</td><td>⁴⁰Ca ou ⁴⁰Ar</td><td>1,28 × 10⁹ ans</td></tr></table>
+<p>Leurs concentrations sont estimées par la géochimie (roches terrestres) et la cosmochimie (météorites).</p>
+<div class="box keep"><b class="t">✅ Le bilan global</b>Radioactivité dans la croûte : <b>0,5 × 10¹³ W</b> · dans le manteau : <b>2,2 × 10¹³ W</b> · refroidissement séculaire : <b>1,5 × 10¹³ W</b>. Total ≈ 4,2 × 10¹³ W = le flux mesuré en surface. Il reste à comprendre comment cette chaleur est <b>transportée</b> de l'intérieur vers la surface.</div>
+<details class="ex sky"><summary>Exercice 22 — Puissance radioactive de chaque enveloppe</summary>
+<table><tr><th></th><th>Croûte continentale</th><th>Croûte océanique</th><th>Manteau</th></tr>
+<tr><td>Uranium</td><td>1,6 × 10⁻¹⁰ W/kg</td><td>0,9 × 10⁻¹⁰</td><td>0,02 × 10⁻¹⁰</td></tr>
+<tr><td>Thorium</td><td>1,6 × 10⁻¹⁰</td><td>0,7 × 10⁻¹⁰</td><td>0,03 × 10⁻¹⁰</td></tr>
+<tr><td>Potassium</td><td>0,7 × 10⁻¹⁰</td><td>0,1 × 10⁻¹⁰</td><td>0,007 × 10⁻¹⁰</td></tr>
+<tr><td>Densité</td><td>2,7</td><td>2,9</td><td>3,2</td></tr>
+<tr><td>Épaisseur moyenne</td><td>30 km</td><td>10 km</td><td>2 900 km</td></tr></table>
+<div class="steps sky">
+<div class="step"><b>Méthode</b> : P = (production par kg, U + Th + K) × masse volumique × volume. Croûte continentale sur 30 % de la surface, océanique sur 70 %.</div>
+<div class="step"><b>Croûte continentale</b> : 3,9 × 10⁻¹⁰ W/kg × 2 700 kg/m³ × (0,3 × 4πR² × 30 km ≈ 4,6 × 10¹⁸ m³) ≈ <span class="ans">4,8 × 10¹² W</span>.</div>
+<div class="step"><b>Croûte océanique</b> : 1,7 × 10⁻¹⁰ × 2 900 × 3,6 × 10¹⁸ ≈ <span class="ans">1,8 × 10¹² W</span>.</div>
+<div class="step"><b>Manteau</b> : 0,057 × 10⁻¹⁰ × 3 200 × 8,9 × 10²⁰ m³ ≈ <span class="ans">1,6 × 10¹³ W</span>.</div>
+<div class="step"><b>Parts</b> : manteau ≈ 71 %, croûte continentale ≈ 21 %, croûte océanique ≈ 8 %. Total ≈ 2,3 × 10¹³ W. <b>Conclusion</b> : la croûte continentale est de loin la plus riche en radioéléments <i>par kilogramme</i> (×70 par rapport au manteau), mais le manteau, énorme, produit le plus de chaleur au total.</div>
+<div class="step"><b>Comparaison</b> : 2,3 × 10¹³ W de radioactivité contre 4,2 × 10¹³ W qui sortent en surface. La différence (~1,9 × 10¹³ W) vient du <b>refroidissement séculaire</b> (chaleur initiale, cristallisation de la graine).</div>
+</div></details>
+<div class="chapblock" data-ch="b7"></div>
+<div class="pager"><a href="#b6"><span>← Précédent</span>Chimie</a><a class="next" href="#b8"><span>Suivant →</span>Convection &amp; géotherme</a></div>
+</section>

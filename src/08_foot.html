@@ -1,0 +1,98 @@
+</main>
+</div>
+<script>
+__DATA__
+const TITLES={organisation:"Organisation & QCM",a1:"A · 1.1-1.2 L'énergie du Soleil",a2:"A · 1.3 Bilan radiatif & effet de serre",a3:"A · 1.4 Effets des activités humaines",a4:"A · 2.1 Orbite & Milankovic",a5:"A · 2.2-2.4 Latitude, saisons, incidence",a6:"A · 2.5-2.7 Redistribution & climats",b0:"B · 0. La Terre en couches",b1:"B · 1. Forme de la Terre",b2:"B · 2a. Histoire des modèles",b3:"B · 2b. Ondes sismiques & croûte",b4:"B · 2c. Manteau, noyau, rais",b5:"B · 3. Masse & densité",b6:"B · 4. Chimie de la Terre",b7:"B · 5. Chaleur de la Terre",b8:"B · 5b. Convection & géotherme",b9:"B · 6. Terre 3D & dynamique"};
+const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function esc(s){return s}
+// --- moteur de QCM réutilisable
+function makeQuiz(box,list,opts={}){
+ box.innerHTML='';let answered=0,good=0;
+ const head=document.createElement('div');head.style.cssText='display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0';
+ const sc=document.createElement('span');sc.style.cssText='font-weight:700;font-size:17px';
+ const b1=document.createElement('button');b1.className='btn';b1.textContent='Recommencer (mélangé)';
+ const b2=document.createElement('button');b2.className='btn alt';b2.textContent='Afficher toutes les réponses';
+ head.append(b1,b2,sc);box.appendChild(head);
+ const qs=document.createElement('div');box.appendChild(qs);
+ const fin=document.createElement('div');fin.className='box keep';fin.style.display='none';box.appendChild(fin);
+ function upd(){sc.textContent=answered?('Score : '+good+' / '+answered+(answered===list.length?'  —  '+Math.round(100*good/list.length)+' %':'')):'';
+  if(answered===list.length){fin.style.display='block';const n=Math.round(20*good/list.length*10)/10;fin.innerHTML='<b class="t">Résultat</b>'+good+' bonnes réponses sur '+list.length+' → <b>'+n+' / 20</b>. '+(n>=16?'Excellent, c\'est maîtrisé.':n>=12?'Bien : relis les explications des erreurs.':'Reprends le chapitre et le « par cœur », puis recommence.')}}
+ const oks=[];
+ list.forEach((q,n)=>{const [t,o0,ok0,why,src]=q;const ord=shuffle(o0.map((_,i)=>i));const o=ord.map(i=>o0[i]);const ok=ord.indexOf(ok0);oks.push(ok);const d=document.createElement('div');d.className='qz';
+  d.innerHTML='<div class="qt">'+(n+1)+'. '+t+(src?' <span class="pill">'+src+'</span>':'')+'</div>';
+  o.forEach((x,k)=>{const l=document.createElement('label');l.innerHTML=String.fromCharCode(65+k)+'. '+x;
+   l.onclick=()=>{if(d.classList.contains('done'))return;d.classList.add('done');answered++;
+    if(k===ok){l.classList.add('ok');good++}else{l.classList.add('ko');d.querySelectorAll('label')[ok].classList.add('ok')}upd()};d.appendChild(l)});
+  const w=document.createElement('div');w.className='why';w.innerHTML='💡 '+why;d.appendChild(w);qs.appendChild(d)});
+ b1.onclick=()=>makeQuiz(box,shuffle(opts.pool?pick(opts.pool(),opts.n):[...list]),opts);
+ b2.onclick=()=>{qs.querySelectorAll('.qz').forEach((d,i)=>{if(!d.classList.contains('done')){d.classList.add('done');d.querySelectorAll('label')[oks[i]].classList.add('ok')}})};
+ upd();
+}
+function pick(arr,n){return shuffle([...arr]).slice(0,n||arr.length)}
+// --- blocs de chapitre
+document.querySelectorAll('.chapblock').forEach(el=>{const id=el.dataset.ch;const c=CH[id];if(!c)return;
+ let h='';
+ if(c.coeur&&c.coeur.length){const done=store.get('coeur-'+id)||{};
+  h+='<h2>🧠 À savoir par cœur</h2><p class="src">Coche ce que tu sais réciter sans regarder. Ta progression est gardée dans ce navigateur.</p><div class="box keep coeur">'+c.coeur.map((x,i)=>'<label style="display:flex;gap:8px;margin:5px 0;cursor:pointer"><input type="checkbox" data-k="'+i+'" '+(done[i]?'checked':'')+'><span>'+x+'</span></label>').join('')+'</div>';}
+ if(c.qcm&&c.qcm.length){h+='<h2>✅ QCM du chapitre ('+c.qcm.length+' questions)</h2><div class="qbox"></div>';}
+ if(c.exos&&c.exos.length){h+='<h2>✏️ Exercices d\'entraînement</h2><p class="src">Fais-les d\'abord sur une feuille, sans regarder. Les corrigés sont plus bas.</p><ol class="exlist">'+c.exos.map(e=>'<li class="q" style="margin:8px 0">'+e[0]+'</li>').join('')+'</ol><details class="ex"><summary>Voir les corrigés</summary><ol>'+c.exos.map(e=>'<li style="margin:8px 0">'+e[1]+'</li>').join('')+'</ol></details>';}
+ el.innerHTML=h;
+ el.querySelectorAll('.coeur input').forEach(cb=>cb.onchange=()=>{const d=store.get('coeur-'+id)||{};d[cb.dataset.k]=cb.checked;store.set('coeur-'+id,d)});
+ const qb=el.querySelector('.qbox');if(qb)makeQuiz(qb,c.qcm.map(q=>q));
+});
+// --- page par cœur (tout)
+(function(){const box=document.getElementById('allcoeur');if(!box)return;let h='';
+ for(const id in TITLES){const c=CH[id];if(!c||!c.coeur||!c.coeur.length)continue;
+  h+='<h2><a href="#'+id+'" style="text-decoration:none;color:inherit">'+TITLES[id]+'</a></h2><ul>'+c.coeur.map(x=>'<li>'+x+'</li>').join('')+'</ul>';}
+ box.innerHTML=h;})();
+// --- grands QCM
+const CC1=['a1','a2','a3','a4','a5','a6','b0','b1','b2','b3','b4'];
+const CC2=['a1','a2','a3','a4','a5','a6','b0','b1','b2','b3','b4','b5','b6','b7','b8','b9'];
+function pool(ids){const p=[];ids.forEach(id=>(CH[id].qcm||[]).forEach(q=>p.push([q[0],q[1],q[2],q[3],TITLES[id].split(' · ')[1]||id])));return p}
+function startBig(which){const ids=which==='cc1'?CC1:CC2;const n=which==='cc1'?40:60;const p=()=>pool(ids);
+ document.getElementById('bigtitle').textContent=(which==='cc1'?'Examen blanc CC1':'Examen blanc CC2')+' — '+n+' questions tirées au hasard parmi '+p().length;
+ makeQuiz(document.getElementById('bigquiz'),pick(p(),n),{pool:p,n});
+ document.getElementById('bigtitle').scrollIntoView({behavior:'smooth'});}
+document.querySelectorAll('[data-big]').forEach(b=>b.onclick=()=>startBig(b.dataset.big));
+(function(){const t=document.getElementById('poolinfo');if(t)t.textContent='Banque totale : '+pool(CC2).length+' questions (dont '+pool(CC1).length+' pour le CC1).'})();
+
+// --- QCM format réel (A-E, plusieurs réponses)
+const CC2ONLY=new Set([11,12,13,20,21,22,23,25,26]);
+function realQuiz(mode){
+ let idx=QR.map((_,i)=>i);
+ if(mode==='cc1')idx=idx.filter(i=>!CC2ONLY.has(i));
+ let n=mode==='cc1'?30:mode==='all'?40:idx.length;
+ if(mode!=='every')idx=shuffle(idx).slice(0,n);
+ const box=document.getElementById('realquiz');box.innerHTML='';
+ document.getElementById('realtitle').textContent=(mode==='cc1'?'Sujet type CC1':mode==='all'?'Sujet type CC2':'Toutes les questions')+' — '+idx.length+' questions';
+ let done=0,good=0;const sc=document.createElement('div');sc.style.cssText='position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;font-size:17px;z-index:5';box.appendChild(sc);
+ const upd=()=>{sc.textContent='Validées : '+done+' / '+idx.length+'  ·  Justes : '+good+(done?'  ·  Note : '+(Math.round(200*good/idx.length)/10)+' / 20':'')};upd();
+ idx.forEach((qi,n)=>{const [t,o,ok,why,part,src]=QR[qi];const d=document.createElement('div');d.className='qz';
+  d.innerHTML='<div class="qt">'+(n+1)+'. '+t+' <span class="pill">Partie '+part+'</span> <span class="pill">inspiré de : '+src+'</span></div>';
+  const boxes=[];o.forEach((x,k)=>{const l=document.createElement('label');l.style.display='flex';l.style.gap='8px';const cb=document.createElement('input');cb.type='checkbox';l.appendChild(cb);const sp=document.createElement('span');sp.innerHTML='<b>'+'ABCDE'[k]+'.</b> '+x;l.appendChild(sp);d.appendChild(l);boxes.push([cb,l])});
+  const bt=document.createElement('button');bt.className='btn';bt.textContent='Valider';bt.style.marginTop='8px';d.appendChild(bt);
+  const w=document.createElement('div');w.className='why';d.appendChild(w);
+  bt.onclick=()=>{if(d.classList.contains('done'))return;d.classList.add('done');done++;
+   const chosen=boxes.map((b,k)=>b[0].checked?k:-1).filter(k=>k>=0);const right=chosen.length===ok.length&&ok.every(k=>chosen.includes(k));if(right)good++;
+   boxes.forEach(([cb,l],k)=>{cb.disabled=true;if(ok.includes(k))l.classList.add('ok');else if(cb.checked)l.classList.add('ko')});
+   w.innerHTML=(right?'✅ <b>Juste.</b> ':'❌ <b>Faux.</b> ')+'Bonne(s) réponse(s) : <b>'+ok.map(k=>'ABCDE'[k]).join('')+'</b>. '+why;bt.remove();upd()};
+  box.appendChild(d)});
+ document.getElementById('realtitle').scrollIntoView({behavior:'smooth'});
+}
+document.querySelectorAll('[data-real]').forEach(b=>b.onclick=()=>realQuiz(b.dataset.real));
+// glossaire
+document.getElementById('glsearch').addEventListener('input',e=>{const v=e.target.value.toLowerCase();
+ document.querySelectorAll('#gl dt').forEach(dt=>{const dd=dt.nextElementSibling;const show=(dt.textContent+dd.textContent).toLowerCase().includes(v);dt.style.display=dd.style.display=show?'':'none'})});
+// routage
+const pages=[...document.querySelectorAll('section.page')].map(s=>s.id);
+function route(){let h=location.hash.slice(1);if(!pages.includes(h))h='accueil';
+ document.querySelectorAll('section.page').forEach(s=>s.classList.toggle('show',s.id===h));
+ document.querySelectorAll('nav.side a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+h));
+ document.querySelector('nav.side').classList.remove('open');window.scrollTo(0,0);store.set('geo1-last',h)}
+window.addEventListener('hashchange',route);
+if(!location.hash){const l=store.get('geo1-last');if(l&&pages.includes(l))location.hash=l}
+route();
+</script>
+</body>
+</html>

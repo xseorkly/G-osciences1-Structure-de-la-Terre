@@ -1,0 +1,186 @@
+<!-- ===================== B3 ===================== -->
+<section class="page" id="b3">
+<div class="kicker sky">Partie B · Chapitre 2b</div>
+<h1>Les ondes sismiques et l'exploration de la croûte</h1>
+<p class="lead">Un séisme (ou une explosion) envoie des ondes dans toutes les directions. En mesurant <b>quand</b> elles arrivent à des stations plus ou moins lointaines, on reconstitue les couches qu'elles ont traversées. C'est le cœur du cours : formules, schémas et exercices.</p>
+
+<h2>Rappel : les ondes sismiques</h2>
+<table>
+<tr><th>Onde</th><th>Mouvement</th><th>Traverse</th><th>Vitesse</th></tr>
+<tr><td><b>P</b> (primaires)</td><td>compression-dilatation, dans le sens de propagation (comme un ressort)</td><td>solides <b>et liquides</b></td><td>les plus rapides (~6 km/s dans la croûte, ~8 dans le manteau)</td></tr>
+<tr><td><b>S</b> (secondaires)</td><td>cisaillement, perpendiculaire à la propagation (comme une corde qu'on secoue)</td><td><b>solides seulement</b></td><td>≈ V<sub>P</sub>/√3 ≈ V<sub>P</sub>/1,73</td></tr>
+<tr><td>Ondes de surface (Love, Rayleigh)</td><td>restent près de la surface</td><td>—</td><td>les plus lentes, les plus destructrices</td></tr>
+</table>
+<p>En général, la vitesse <b>augmente avec la profondeur</b> (roches plus comprimées, plus rigides).</p>
+<p>Le cours donne un tableau de vitesses par matériau (diapo 63), à connaître en ordre de grandeur :</p>
+<table><tr><th>Matériau</th><th>V<sub>P</sub> (m/s)</th><th>V<sub>S</sub> (m/s)</th></tr>
+<tr><td>Air</td><td>343</td><td>—</td></tr><tr><td>Eau</td><td>1 450-1 500</td><td>— (liquide)</td></tr>
+<tr><td>Glace</td><td>3 400-3 800</td><td>1 700-1 900</td></tr><tr><td>Sol végétal</td><td>300-700</td><td>100-300</td></tr>
+<tr><td>Sables secs / humides</td><td>400-1 200 / 1 500-2 000</td><td>100-500 / 400-600</td></tr>
+<tr><td>Argiles saturées</td><td>1 100-2 500</td><td>200-800</td></tr><tr><td>Grès</td><td>2 000-3 500</td><td>800-1 800</td></tr>
+<tr><td>Calcaires</td><td>3 500-6 000</td><td>2 000-3 300</td></tr><tr><td>Sel</td><td>4 500-5 500</td><td>2 500-3 100</td></tr>
+<tr><td><b>Granite</b></td><td><b>4 500-6 000</b></td><td>2 500-3 300</td></tr><tr><td><b>Basalte</b></td><td><b>5 000-6 000</b></td><td>2 800-3 400</td></tr>
+<tr><td>Gneiss</td><td>4 400-5 200</td><td>2 700-3 200</td></tr></table>
+<p>Sur un sismogramme réel (diapo 56, séisme enregistré à Δ = 5 902 km), on voit arriver dans l'ordre : l'onde <b>P</b>, puis l'onde <b>S</b>, puis les <b>ondes de surface</b> (Rayleigh), de très grande amplitude.</p>
+
+<h2>La loi de Snell-Descartes</h2>
+<p>Quand une onde passe d'un milieu de vitesse V₁ à un milieu de vitesse V₂, elle change de direction (réfraction), exactement comme la lumière qui entre dans l'eau :</p>
+<div class="formula"><span class="frac"><span>sin i₁</span><span>V₁</span></span> = <span class="frac"><span>sin r₂</span><span>V₂</span></span><small>angles mesurés par rapport à la <b>verticale</b> (la normale à l'interface)</small></div>
+<p>Si V₂ &gt; V₁ (cas général dans la Terre), alors r₂ &gt; i₁ : le rayon s'écarte de la verticale.</p>
+<details class="ex sky"><summary>Exercice 5 — Pour quel angle r₂ = 90° ? Comment s'appelle-t-il ?</summary>
+<p>Si r₂ = 90°, sin r₂ = 1, donc sin i₁ = V₁/V₂. Cet angle est l'<b>angle (d'incidence) critique</b> :</p>
+<div class="formula">i<sub>c</sub> = arcsin(V₁ / V₂)</div>
+<p>À l'angle critique, l'onde réfractée « rase » l'interface en se propageant à la vitesse V₂ du milieu du dessous. Au-delà de i<sub>c</sub>, il n'y a plus de réfraction : réflexion totale.</p></details>
+
+<h2>Les trois ondes enregistrées au-dessus d'une croûte simple</h2>
+<p>Modèle : une croûte d'épaisseur h et de vitesse V₁ posée sur un manteau de vitesse V₂ &gt; V₁, Moho horizontal, séisme en surface, station à la distance x.</p>
+<figure>
+<svg viewBox="0 0 660 260" role="img" aria-label="Onde directe, réfléchie, conique">
+<rect width="660" height="260" fill="#fffdf8"/>
+<rect x="20" y="40" width="620" height="110" fill="#f6e7dc"/><rect x="20" y="150" width="620" height="90" fill="#e3eef7"/>
+<text x="30" y="140" font-size="13">croûte V₁</text><text x="30" y="232" font-size="13">manteau V₂ &gt; V₁</text>
+<text x="600" y="165" font-size="12" text-anchor="end" fill="#1f5d8c">Moho</text>
+<line x1="20" y1="150" x2="640" y2="150" stroke="#1f5d8c" stroke-width="2"/>
+<circle cx="60" cy="40" r="7" fill="#a8321e"/><text x="52" y="28" font-size="12">S (source)</text>
+<polygon points="560,40 552,26 568,26" fill="#1d2327"/><text x="572" y="30" font-size="12">station (x)</text>
+<line x1="60" y1="40" x2="560" y2="40" stroke="#2f6b3f" stroke-width="3"/><text x="300" y="34" font-size="12" fill="#2f6b3f">1 · onde directe</text>
+<polyline points="60,40 310,150 560,40" fill="none" stroke="#8a6a10" stroke-width="2" stroke-dasharray="6 4"/><text x="250" y="110" font-size="12" fill="#8a6a10">2 · réfléchie</text>
+<polyline points="60,40 175,150 445,150 560,40" fill="none" stroke="#a8321e" stroke-width="3"/><text x="310" y="168" font-size="12" fill="#a8321e" text-anchor="middle">3 · conique (réfractée) : file sur le Moho à V₂</text>
+<text x="128" y="105" font-size="12" fill="#a8321e">i<tspan baseline-shift="sub" font-size="9">c</tspan></text>
+</svg>
+<figcaption>La réfractée conique descend avec l'angle critique, longe le Moho à la vitesse V₂, et remonte avec le même angle.</figcaption>
+</figure>
+<p>Pourquoi l'onde conique remonte-t-elle ? <b>Principe de Huygens</b> : chaque point atteint par une onde se comporte comme une nouvelle petite source. L'onde qui file sous le Moho à V₂ excite la croûte au-dessus, et ces petites sources forment un front d'onde plan incliné (un « cône ») qui remonte avec l'angle i<sub>c</sub>.</p>
+
+<table>
+<tr><th>Onde</th><th>Temps de parcours t(x)</th><th>Courbe t(x) (hodochrone)</th></tr>
+<tr><td>1 · directe</td><td>t = x / V₁</td><td>droite passant par 0, pente 1/V₁</td></tr>
+<tr><td>2 · réfléchie</td><td>t = √(x² + 4h²) / V₁</td><td>hyperbole, t(0) = 2h/V₁</td></tr>
+<tr><td>3 · conique</td><td>t = x / V₂ + 2h cos i<sub>c</sub> / V₁</td><td>droite de pente 1/V₂ (plus faible), ordonnée à l'origine t₀ = 2h cos i<sub>c</sub>/V₁, n'existe qu'au-delà de x<sub>c</sub></td></tr>
+</table>
+<div class="box idea"><b class="t">💡 La clé de toute la méthode</b>Sur un graphique temps/distance, chaque onde donne une droite (ou presque). <b>Pente = 1 / vitesse</b> et <b>ordonnée à l'origine de la conique → épaisseur</b> :<div class="formula" style="margin:8px 0">V = 1 / pente &nbsp;&nbsp;·&nbsp;&nbsp; i<sub>c</sub> = arcsin(V₁/V₂) &nbsp;&nbsp;·&nbsp;&nbsp; h = <span class="frac"><span>t₀ · V₁</span><span>2 cos i<sub>c</sub></span></span></div></div>
+
+<details class="ex sky"><summary>Exercice 6 — Croûte h = 30 km, V₁ = 6 km/s, manteau V₂ = 8 km/s : temps des ondes, angle et distance critiques</summary>
+<div class="steps sky">
+<div class="step"><b>Onde directe</b> : t<sub>d</sub> = x / V₁ = <span class="ans">x / 6</span> (s, x en km).</div>
+<div class="step"><b>Onde réfléchie</b> : elle descend jusqu'au Moho au milieu (x/2) puis remonte. Par Pythagore, chaque moitié du trajet mesure ℓ = √((x/2)² + h²). Donc t<sub>r</sub> = 2ℓ / V₁ = √(x² + 4h²) / V₁ = <span class="ans">√(x² + 3 600) / 6</span>.</div>
+<div class="step"><b>Angle critique</b> : i<sub>c</sub> = arcsin(6/8) = arcsin(0,75) = <span class="ans">48,6°</span>.</div>
+<div class="step"><b>Distance critique</b> x<sub>c</sub> (où la réfléchie arrive avec l'angle i<sub>c</sub>) : dans le triangle, (x<sub>c</sub>/2) / h = tan i<sub>c</sub>, donc x<sub>c</sub> = 2h tan i<sub>c</sub> = 60 × 1,134 = <span class="ans">68 km</span>. Avant cette distance, pas d'onde conique.</div>
+<div class="step"><b>Montrer que tan i<sub>c</sub> = V₁/√(V₂² − V₁²)</b> : sin i<sub>c</sub> = V₁/V₂, et cos i<sub>c</sub> = √(1 − sin²i<sub>c</sub>) = √(V₂² − V₁²)/V₂. Le rapport donne tan i<sub>c</sub> = V₁ / √(V₂² − V₁²). ✔</div>
+</div></details>
+
+<details class="ex sky"><summary>Exercice 7 — Temps de l'onde conique, et distance où elle double l'onde directe</summary>
+<div class="steps sky">
+<div class="step"><b>Le trajet</b> : descente oblique (longueur ℓ = h / cos i<sub>c</sub>, à V₁), trajet horizontal sous le Moho (x − 2x₀ avec x₀ = h tan i<sub>c</sub>, à V₂), remontée (ℓ, à V₁).
+<div class="formula">t = <span class="frac"><span>x − 2h tan i<sub>c</sub></span><span>V₂</span></span> + <span class="frac"><span>2h</span><span>V₁ cos i<sub>c</sub></span></span></div></div>
+<div class="step"><b>Simplification</b> : on remplace V₂ = V₁ / sin i<sub>c</sub> :<br>t = x/V₂ + (2h/cos i<sub>c</sub>)(1/V₁ − sin²i<sub>c</sub>/V₁) = x/V₂ + (2h/(V₁ cos i<sub>c</sub>))(cos²i<sub>c</sub>) donc
+<div class="formula">t = <span class="frac"><span>x</span><span>V₂</span></span> + <span class="frac"><span>2h cos i<sub>c</sub></span><span>V₁</span></span></div></div>
+<div class="step"><b>Distance de croisement</b> (la conique arrive en même temps que la directe) : x/V₂ + 2h cos i<sub>c</sub>/V₁ = x/V₁ → x(1/V₁ − 1/V₂) = 2h cos i<sub>c</sub>/V₁ →
+<div class="formula">x = <span class="frac"><span>2h V₂ cos i<sub>c</sub></span><span>V₂ − V₁</span></span></div></div>
+<div class="step"><b>Application</b> : cos 48,6° = 0,661 → x = 2 × 30 × 8 × 0,661 / 2 ≈ <span class="ans">159 km</span>. Au-delà, l'onde la plus rapide à arriver est celle qui est passée par le manteau : elle fait un détour, mais par une « autoroute » plus rapide.</div>
+</div>
+<div class="box analogy"><b class="t">🔎 Image mentale</b>Pour aller loin, il vaut mieux faire un détour par l'autoroute (le manteau, rapide) que rester sur la départementale (la croûte, lente). Pour aller tout près, la départementale directe gagne.</div></details>
+
+<details class="ex sky"><summary>Exercice 8 — Déterminer h et V₂ à partir de mesures de l'onde réfractée (V₁ = 6 km/s)</summary>
+<table><tr><th>d (km)</th><td>108,0</td><td>115,3</td><td>127,8</td><td>136,4</td><td>147,2</td><td>155,6</td><td>164,7</td><td>173,2</td><td>186,7</td><td>192,6</td></tr>
+<tr><th>t (s)</th><td>18,8</td><td>19,8</td><td>21,7</td><td>23,0</td><td>24,6</td><td>25,9</td><td>27,3</td><td>28,6</td><td>30,5</td><td>31,5</td></tr></table>
+<div class="steps sky">
+<div class="step"><b>Tracer t en fonction de x</b> : les points sont alignés (droite de la conique).</div>
+<div class="step"><b>Pente</b> : sur la droite tracée, entre x = 100 km (t ≈ 17,9 s) et x = 200 km (t ≈ 32,6 s) : (32,6 − 17,9)/100 = 0,147 s/km → <span class="ans">V₂ = 1/0,147 ≈ 6,8 km/s</span>.</div>
+<div class="step"><b>Angle critique</b> : i<sub>c</sub> = arcsin(6 / 6,8) ≈ <b>62°</b> (cos i<sub>c</sub> ≈ 0,47).</div>
+<div class="step"><b>Ordonnée à l'origine</b> : 17,9 = 0,147 × 100 + b → b = t₀ ≈ 3,2 s.</div>
+<div class="step"><b>Épaisseur</b> : h = t₀V₁ / (2 cos i<sub>c</sub>) = 6 × 3,2 / (2 × 0,47) ≈ <span class="ans">20 km</span>.</div>
+</div>
+<p><b>Interprétation</b> : 6,8 km/s, c'est trop lent pour le manteau (~8 km/s) : on a détecté une <b>interface intracrustale</b> (entre croûte supérieure et croûte inférieure), pas le Moho.</p>
+<p class="src">Remarque : une régression linéaire sur les 10 points donne une pente de 0,150 (V₂ ≈ 6,65 km/s) et h ≈ 17 km. Le résultat dépend de la façon de tracer la droite : l'important est la méthode et l'ordre de grandeur.</p>
+<p class="src">📚 Ces données viennent d'un sujet d'examen plus complet (avec une onde réfléchie) : voir la page <a href="#annales">Annales</a>, où il est corrigé en entier.</p></details>
+
+<h2>Exemples réels</h2>
+<p><b>Profil ECORS (Pyrénées)</b> : un tir de 5 kg de dynamite. On voit l'onde réfléchie, la conique à la base des sédiments, puis une série de réflexions dans la croûte jusqu'à la <b>racine crustale des Pyrénées</b> (la croûte s'épaissit sous la chaîne), sous le Moho du bassin d'Aquitaine.</p>
+<div class="box idea"><b class="t">💡 Le temps réduit</b>Sur les sismogrammes, on trace souvent t − x/6 (« temps réduit » à 6 km/s) au lieu de t. Une onde qui va à 6 km/s devient alors horizontale, ce qui rend les petites différences de vitesse bien visibles. Pour revenir au vrai temps : <b>t = t<sub>réduit</sub> + x/6</b>.</div>
+<details class="ex sky"><summary>Exercice 9 — Profil sismique en temps réduit (points lus sur la figure)</summary>
+<div class="q">Points lus : 1 – x = 0 km, t<sub>r</sub> = 0,2 s · 2 – x = 110 km, t<sub>r</sub> = −0,4 s (onde directe) · 3 – x = 130 km, t<sub>r</sub> = −0,5 s · 4 – x = 300 km, t<sub>r</sub> = −4,1 s (onde conique).</div>
+<div class="steps sky">
+<div class="step"><b>Retour aux vrais temps</b> (t = t<sub>r</sub> + x/6) : 0,2 s ; −0,4 + 110/6 = 17,9 s ; −0,5 + 130/6 = 21,2 s ; −4,1 + 300/6 = 45,9 s.</div>
+<div class="step"><b>Onde directe</b> : pente = (17,9 − 0,2)/110 = 0,161 → <span class="ans">V₁ ≈ 6,2 km/s</span>.</div>
+<div class="step"><b>Onde conique</b> : pente = (45,9 − 21,2)/170 = 0,145 → <span class="ans">V₂ ≈ 6,9 km/s</span>.</div>
+<div class="step">i<sub>c</sub> = arcsin(6,21/6,88) ≈ 64,5° (cos ≈ 0,43).</div>
+<div class="step"><b>Ordonnée à l'origine</b> lue sur le graphe ≈ 2,7 s → h = 2,7 × 6,21 / (2 × 0,43) ≈ <span class="ans">19,5 km</span>.</div>
+</div>
+<p>Encore une interface <b>dans</b> la croûte (6,9 km/s &lt; 8 km/s). <span class="src">Si on calcule l'ordonnée à partir des deux points (b = 21,2 − 0,145 × 130 ≈ 2,25 s), on trouve h ≈ 16 km : même conclusion.</span></p></details>
+
+<h3>Le Moho en France : le séisme de La Laigne</h3>
+<p>Le séisme de La Laigne (Charente-Maritime, 16 juin 2023, M ≈ 5) a été enregistré par de nombreuses stations jusqu'à 800 km. Sur le graphique temps-distance, on suit 4 ondes : <b>Pg</b> et <b>Sg</b> (directes, dans la croûte, « g » pour granite) et <b>Pn</b> et <b>Sn</b> (coniques, le long du Moho, « n » pour « normal »).</p>
+<details class="ex sky"><summary>Exercice 10 — Épaisseur de la croûte avec les ondes P et S de La Laigne</summary>
+<div class="q">Lectures à 800 km : Pg = 133,3 s ; Pn = 103,4 s avec t₀ = 7,7 s ; Sg = 226 s ; Sn = 180 s avec t₀ = 10,2 s.</div>
+<p><b>Ondes P</b> :</p>
+<div class="steps sky">
+<div class="step">V₁ = 800 / 133,3 = <b>6,00 km/s</b> (la directe passe par l'origine).</div>
+<div class="step">V₂ = 800 / (103,4 − 7,7) = <b>8,36 km/s</b> (on retire l'ordonnée à l'origine).</div>
+<div class="step">i<sub>c</sub> = arcsin(6,00/8,36) = 45,9°.</div>
+<div class="step">h = V₁t₀ / (2 cos i<sub>c</sub>) = 6 × 7,7 / (2 × 0,696) ≈ <span class="ans">33 km</span>.</div>
+</div>
+<p><b>Ondes S</b> : V₁ = 800/226 = 3,53 km/s ; V₂ = 800/(180 − 10,2) = 4,71 km/s ; i<sub>c</sub> = 48,5° ; h ≈ <span class="ans">27 km</span>.</p>
+<p><b>Bilan</b> : croûte d'environ 30 km (6,0 km/s en P) sur un manteau à 8,36 km/s. Rapports V<sub>P</sub>/V<sub>S</sub> = 1,70 (croûte) et 1,77 (manteau), proches de √3 = 1,73 : valeur typique d'un solide élastique « standard ».</p></details>
+
+<h2>Autres outils pour imager la croûte</h2>
+<ul>
+<li><b>Fonctions récepteurs</b> : une seule station à 3 composantes enregistre des séismes lointains (télésismes). Quand l'onde P arrive sous la station, elle se convertit en partie en onde S à chaque interface (ex. le Moho). Le décalage de temps entre le P direct et ce S converti donne la <b>profondeur de l'interface</b> et des informations sur V<sub>P</sub> et V<sub>S</sub>.</li>
+<li><b>CRUST 1.0</b> : un modèle mondial de la croûte (maille de 1° × 1°, Laske et al.), combinant sismique, fonctions récepteurs et cartes du Moho publiées. On y voit la croûte mince sous les océans et épaisse sous les chaînes de montagnes (Himalaya, Andes : jusqu'à 70 km).</li>
+</ul>
+<div class="chapblock" data-ch="b3"></div>
+<div class="pager"><a href="#b2"><span>← Précédent</span>Histoire des modèles</a><a class="next" href="#b4"><span>Suivant →</span>Manteau, noyau, rais</a></div>
+</section>
+
+<!-- ===================== B4 ===================== -->
+<section class="page" id="b4">
+<div class="kicker sky">Partie B · Chapitre 2c</div>
+<h1>Les ondes dans le manteau et le noyau</h1>
+<p class="lead">Dans la Terre entière, la vitesse augmente progressivement avec la profondeur : les rais ne sont plus des segments droits mais des <b>courbes</b> qui plongent puis remontent. Leur étude a permis de construire le modèle de vitesse de toute la Terre.</p>
+<h2>Des rais courbés</h2>
+<p>Imagine une pile de couches très fines, chacune un peu plus rapide que celle du dessus. À chaque interface, Snell-Descartes écarte un peu le rai de la verticale. Avec des couches infiniment fines, le rai devient une courbe qui s'incurve vers le haut et remonte vers la surface.</p>
+<h2>Le paramètre du rai</h2>
+<p>Le modèle de référence est <b>PREM</b> (<i>Preliminary Reference Earth Model</i>, Dziewonski &amp; Anderson, 1981), construit à partir de milliers d'observations de temps de trajet et d'oscillations propres.</p>
+<p>Dans un milieu en couches horizontales (« tabulaire »), Snell-Descartes donne une quantité qui reste <b>constante tout le long d'un rai</b> :</p>
+<div class="formula">p = <span class="frac"><span>sin i</span><span>V</span></span> = constante = paramètre du rai</div>
+<p>Au point le plus profond du rai, celui-ci est horizontal (i = 90°) : <b>p = 1 / V<sub>bas</sub></b>. Si on connaît p, on connaît donc la vitesse au point le plus bas atteint par le rai !</p>
+<p>Et on peut mesurer p à la surface : c'est la <b>pente de l'hodochrone</b> (la courbe t(x) des temps d'arrivée en fonction de la distance) :</p>
+<div class="formula">p = <span class="frac"><span>dt</span><span>dx</span></span></div>
+<p>Dans une Terre <b>sphérique</b>, on travaille en distance angulaire Δ (en degrés ou radians) et p = r sin i / V (r = distance au centre) ; on a toujours p = dt/dΔ et, au point le plus bas, V<sub>bas</sub> = r<sub>bas</sub> / p.</p>
+<details class="ex sky"><summary>Exercice 11 — Montrer que la pente de l'hodochrone est le paramètre du rai</summary>
+<p>Deux rais très voisins partent avec presque le même angle et arrivent à x et x + dx. En surface, le second rai doit parcourir en plus un petit bout de front d'onde de longueur dx·sin i, à la vitesse V. Le temps supplémentaire vaut dt = dx sin i / V. Donc dt/dx = sin i / V = p. ✔</p></details>
+<details class="ex sky"><summary>Exercices 12 et 13 — Vitesse à la base du manteau à partir des hodochrones</summary>
+<p><b>Méthode</b> (les valeurs se lisent sur les figures du cours) :</p>
+<div class="steps sky">
+<div class="step">Sur la courbe de l'onde P, mesurer la <b>pente</b> dt/dΔ à la distance voulue (en s par degré). Pour l'onde P qui frôle la base du manteau (Δ ≈ 100°), la courbe est quasi rectiligne avec une pente d'environ 4,4 s/°.</div>
+<div class="step">Convertir en s/radian : multiplier par 180/π (≈ 57,3) → p ≈ 252 s/rad.</div>
+<div class="step">Au point le plus bas : V = r<sub>bas</sub> / p. Pour un rai qui frôle le noyau, r<sub>bas</sub> ≈ 3 480 km → <span class="ans">V ≈ 13,8 km/s</span>, valeur du modèle PREM à la base du manteau.</div>
+<div class="step">Pour l'exercice 13, on refait la même chose pour plusieurs distances (rais A, B, C…) : chaque rai donne la vitesse à sa profondeur maximale. On reconstruit ainsi V(profondeur) pour tout le manteau.</div>
+</div></details>
+
+<h2>Ce que montrent les rais dans la Terre entière</h2>
+<ul>
+<li><b>Zone d'ombre des ondes P</b> (105° à 142°) : en entrant dans le noyau liquide, la vitesse P <b>chute</b> (13,7 → 8 km/s). Les rais sont fortement déviés vers le centre et ressortent plus loin, au-delà de 142°.</li>
+<li><b>Zone d'ombre des ondes S</b> (au-delà de 105°) : les ondes S <b>ne traversent pas</b> le noyau liquide.</li>
+<li><b>Les phases d'ondes P</b> (diapos 82-88) : <b>P</b> (traverse le manteau en courbe), <b>PP</b> (se réfléchit une fois sur la surface à mi-chemin), <b>Pdiff</b> (diffractée le long de la limite noyau-manteau : faible amplitude, enregistrée dans la zone d'ombre pour les grands séismes), <b>PKP</b> (traverse le noyau externe liquide), <b>PKIKP</b> (traverse aussi la graine solide). Pour les ondes S : <b>S</b>, <b>SS</b>, <b>Sdiff</b> ; zone d'ombre des S <b>au-delà de 103°</b> (diapo 90).</li>
+<li><b>Noms des ondes</b> : chaque lettre décrit un morceau du trajet. P ou S dans le manteau, K = onde P dans le noyau externe, I = onde P dans la graine, c = réflexion sur le noyau, i = réflexion sur la graine. Exemples : <b>PcP</b> (réfléchie sur le noyau), <b>PKP</b> (traverse le noyau), <b>PKIKP</b> (traverse la graine), <b>SKS</b>, <b>ScS</b>…</li>
+</ul>
+
+<h2>Du jeu de données au modèle : méthodes directe et inverse</h2>
+<table>
+<tr><th>Méthode directe</th><th>Méthode inverse</th></tr>
+<tr><td>On part d'un modèle m, on calcule les temps d'arrivée prédits avec les lois physiques : <b>d = G m</b>. Puis on vérifie que « ça colle » aux observations.</td><td>On part des données d et on cherche le modèle qui les explique : <b>m = G⁻¹ d</b>. C'est ainsi qu'on a construit les modèles de référence (PREM).</td></tr>
+</table>
+
+<h2>Le modèle de vitesse de la Terre (type PREM)</h2>
+<table>
+<tr><th>Zone</th><th>V<sub>P</sub> (km/s)</th><th>V<sub>S</sub> (km/s)</th><th>Ce qu'on remarque</th></tr>
+<tr><td>Croûte</td><td>5,8 – 6,8</td><td>3,2 – 3,9</td><td></td></tr>
+<tr><td>Manteau supérieur</td><td>~8 → 9</td><td>~4,5 → 5</td><td>baisse dans la LVZ (100-250 km), sauts à 410 et 670 km</td></tr>
+<tr><td>Manteau inférieur</td><td>10,7 → 13,7</td><td>6 → 7,3</td><td>augmentation régulière</td></tr>
+<tr><td>Noyau externe</td><td>8 → 10,3</td><td><b>0</b></td><td>chute brutale de V<sub>P</sub>, pas d'ondes S → <b>liquide</b></td></tr>
+<tr><td>Graine</td><td>~11</td><td>~3,5</td><td>ondes S à nouveau possibles → <b>solide</b></td></tr>
+</table>
+<div class="chapblock" data-ch="b4"></div>
+<div class="pager"><a href="#b3"><span>← Précédent</span>Ondes &amp; croûte</a><a class="next" href="#b5"><span>Suivant →</span>Masse &amp; densité</a></div>
+</section>

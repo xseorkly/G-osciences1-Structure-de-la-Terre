@@ -1,0 +1,200 @@
+<!-- ===================== A4 ===================== -->
+<section class="page" id="a4">
+<div class="kicker">Partie A · Chapitre 2.1 (cours 3)</div>
+<h1>L'orbite de la Terre et les cycles de Milankovic</h1>
+<p class="lead">La Terre tourne autour du Soleil sur une orbite qui se déforme lentement, et son axe oscille. Ces lentes variations (des dizaines de milliers d'années) changent la répartition de l'énergie reçue : ce sont elles qui rythment les glaciations.</p>
+
+<h2>Les 3 lois de Kepler (Johannes Kepler, 1571-1630)</h2>
+<div class="steps">
+<div class="step"><b>Loi des orbites</b> : l'orbite d'une planète est une <b>ellipse</b> dont le Soleil occupe un des foyers.</div>
+<div class="step"><b>Loi des aires</b> : la planète balaie des aires égales en des temps égaux → elle va <b>plus vite</b> quand elle est près du Soleil.</div>
+<div class="step"><b>Loi des périodes</b> : le carré de la période de révolution est proportionnel au cube du demi-grand axe (T² ∝ a³).</div>
+</div>
+
+<h2>Les 3 paramètres de Milankovic</h2>
+<p>Milutin Milankovic (1879-1958), ingénieur et astronome serbe, a montré que trois paramètres orbitaux varient de façon cyclique :</p>
+<table>
+<tr><th>Paramètre</th><th>Ce que c'est</th><th>Variation</th><th>Période</th><th>Effet</th></tr>
+<tr><td><b>Excentricité</b> (e)</td><td>degré d'aplatissement de l'ellipse</td><td>~0 à 0,06 ; aujourd'hui <b>0,017</b></td><td>~100 000 et 400 000 ans</td><td>module le <b>contraste</b> des saisons et un peu l'insolation totale</td></tr>
+<tr><td><b>Obliquité</b> (ε)</td><td>inclinaison de l'axe de rotation par rapport à la perpendiculaire au plan de l'orbite (écliptique)</td><td>~22° à 24,5° ; aujourd'hui <b>23,5°</b> (oscillation de ~1,3° autour de la moyenne)</td><td>~41 000 ans</td><td><b>origine des saisons</b> ; plus elle est forte, plus les saisons sont tranchées</td></tr>
+<tr><td><b>Précession</b> des équinoxes</td><td>l'axe de rotation tourne comme une toupie : sa direction change</td><td>un tour complet</td><td>~19 000 – 23 000 ans</td><td>change la <b>date</b> du périhélie : décide quel hémisphère a l'été quand la Terre est au plus près du Soleil</td></tr>
+</table>
+
+<h3>L'excentricité en détail</h3>
+<p>Pour une courbe conique : e = 0 → cercle ; 0 &lt; e &lt; 1 → ellipse ; e = 1 → parabole ; e &gt; 1 → hyperbole. L'attraction du Soleil donne l'ellipse ; l'attraction des autres planètes la déforme lentement.</p>
+<p>L'insolation moyenne annuelle globale est inversement proportionnelle à √(1 − e²) : quand e augmente, la Terre reçoit un peu plus d'énergie au total et surtout <b>les saisons sont plus contrastées</b> (hivers rigoureux, étés chauds).</p>
+<details class="ex"><summary>Exercice (cours 3, diapo 6) — Distance Terre-Soleil à l'aphélie et au périhélie</summary>
+<div class="q">Données : demi-grand axe a = 149,6 × 10⁶ km ; excentricité e = 0,017.</div>
+<p>Dans une ellipse, la distance du foyer au point le plus éloigné vaut a(1 + e), au point le plus proche a(1 − e).</p>
+<div class="steps">
+<div class="step"><b>Aphélie</b> (le plus loin) : 149,6 × 10⁶ × 1,017 = <span class="ans">152,1 × 10⁶ km</span> (début juillet).</div>
+<div class="step"><b>Périhélie</b> (le plus près) : 149,6 × 10⁶ × 0,983 = <span class="ans">147,1 × 10⁶ km</span> (début janvier).</div>
+</div>
+<div class="box trap"><b class="t">⚠️ Piège classique</b>La Terre est au plus <b>près</b> du Soleil en <b>janvier</b>, en plein hiver de l'hémisphère Nord ! La distance n'explique donc <b>pas</b> les saisons (voir chapitre suivant).</div></details>
+
+<h3>L'obliquité en détail</h3>
+<p>La diapo 12 donne trois états : aujourd'hui <b>23,5°</b> ; il y a 11 000 ans <b>24,5°</b> (rayons plus rasants en hiver, plus directs en été : saisons très marquées) ; il y a 31 000 ans / dans ~12 000 ans <b>21,5°</b> (saisons adoucies). Elle est stabilisée par la <b>Lune</b> (sans elle, elle varierait énormément) et perturbée par les autres planètes. Quand elle est forte (~24°), étés plus chauds et hivers plus froids ; faible (~22°), saisons moins tranchées. Aux hautes latitudes, l'effet sur l'insolation est important (au Quaternaire, jusqu'à 14 % de variation de l'énergie reçue au solstice d'été).</p>
+
+<h3>La précession en détail</h3>
+<p>Elle vient de la forme aplatie de la Terre, de sa rotation et de l'attraction du Soleil, de la Lune et des planètes. Elle <b>ne change pas</b> la quantité totale de chaleur reçue, mais sa <b>distribution</b> : aujourd'hui, c'est l'hémisphère Sud qui est penché vers le Soleil au périhélie ; dans ~11 000 ans ce sera l'hémisphère Nord.</p>
+
+<h2>L'analyse spectrale : retrouver les cycles dans les archives du climat</h2>
+<p>Les archives (carottes de glace, sédiments) donnent des courbes de température très « bruitées ». L'<b>analyse spectrale</b> (par exemple la <b>transformée de Fourier</b>, de Joseph Fourier, 1768-1830) décompose une courbe en une somme de cycles réguliers et indique leur période. Si une courbe C est la somme d'un cycle A et d'un cycle B, son spectre montre deux pics.</p>
+<p><b>Exemple du cours (diapo 18)</b> : un spectre de puissance d'une série sédimentaire montre un pic dominant à <b>41,0 ka</b> (fréquence 1/41 ≈ 0,024 cycle par millier d'années), avec deux petits pics à 39,6 et 53,7 ka : la signature de l'<b>obliquité</b>. Rappel : <b>période = 1 / fréquence</b>.</p>
+<p><b>Keutgen (2018)</b> (diapo 19) : dans des roches sédimentaires, les cycles d'excentricité et de précession modifient la profondeur de l'eau et l'intensité des tempêtes, ce qui change même le type de fossiles (échinodermes ou bivalves) : les cycles orbitaux s'enregistrent dans les sédiments.</p>
+<div class="box keep"><b class="t">✅ À retenir</b>Dans les archives climatiques, on retrouve des pics à ~100 000 (et 400 000), ~41 000, ~23 000 et ~19 000 ans : les signatures des cycles de Milankovic. C'est la preuve que l'orbite pilote les grandes glaciations.</div>
+<div class="chapblock" data-ch="a4"></div>
+<div class="pager"><a href="#a3"><span>← Précédent</span>Effets anthropiques</a><a class="next" href="#a5"><span>Suivant →</span>Latitude, saisons, incidence</a></div>
+</section>
+
+<!-- ===================== A5 ===================== -->
+<section class="page" id="a5">
+<div class="kicker">Partie A · Chapitres 2.2 à 2.4</div>
+<h1>Latitude, saisons et angle d'incidence</h1>
+<p class="lead">Deux choses décident de l'énergie reçue sur un mètre carré : la <b>forme ronde</b> de la Terre (les rayons arrivent de plus en plus inclinés vers les pôles) et l'<b>inclinaison de son axe</b> (qui fait varier l'inclinaison des rayons et la durée du jour au fil de l'année).</p>
+
+<h2>2.2 La latitude</h2>
+<p>La latitude est un angle qui repère un point au nord ou au sud de l'équateur (0° à l'équateur, 90° aux pôles). Tous les points de même latitude forment un cercle parallèle à l'équateur : un <b>parallèle</b>. Repères : <b>tropique du Cancer</b> (23,4° N), <b>tropique du Capricorne</b> (23,4° S), cercles polaires (66,6°).</p>
+<figure>
+<svg viewBox="0 0 640 230" role="img" aria-label="Même faisceau, surface différente">
+ <rect width="640" height="230" fill="#fffdf8"/>
+ <g stroke="#e0a100" stroke-width="3"><line x1="80" y1="20" x2="80" y2="150"/><line x1="140" y1="20" x2="140" y2="150"/></g>
+ <rect x="60" y="150" width="100" height="10" fill="#c99b6d"/><line x1="80" y1="150" x2="140" y2="150" stroke="#a8321e" stroke-width="5"/>
+ <text x="150" y="185" font-size="13" text-anchor="middle">Soleil haut (équateur, été)</text><text x="150" y="203" font-size="13" text-anchor="middle" fill="#a8321e">petite surface → beaucoup d'énergie/m²</text>
+ <g stroke="#e0a100" stroke-width="3"><line x1="330" y1="40" x2="430" y2="150"/><line x1="380" y1="20" x2="510" y2="150"/></g>
+ <rect x="320" y="150" width="230" height="10" fill="#c99b6d"/><line x1="430" y1="150" x2="510" y2="150" stroke="#a8321e" stroke-width="5"/>
+ <text x="445" y="185" font-size="13" text-anchor="middle">Soleil bas (hautes latitudes, hiver)</text><text x="445" y="203" font-size="13" text-anchor="middle" fill="#a8321e">même énergie étalée → moins par m²</text>
+</svg>
+<figcaption>Le même faisceau de lumière chauffe moins quand il arrive en biais : il est étalé sur une plus grande surface.</figcaption>
+</figure>
+
+<p>Le tableau du cours (diapo 23) chiffre l'étalement d'un faisceau d'1 m² de section, à midi le jour de l'équinoxe :</p>
+<table><tr><th>Lieu</th><th>Équateur</th><th>Bordeaux</th><th>Oslo</th><th>Pôle Nord</th></tr>
+<tr><td>Latitude</td><td>0°</td><td>45° N</td><td>60° N</td><td>90° N</td></tr>
+<tr><td>Angle d'incidence</td><td>90°</td><td>45°</td><td>30°</td><td>~1°</td></tr>
+<tr><td>Surface éclairée par 1 m² de faisceau</td><td><b>1 m²</b></td><td><b>1,4 m²</b></td><td><b>2 m²</b></td><td><b>57 m²</b></td></tr></table>
+<p>La surface vaut 1 / sin(angle) : 1/sin 45° = 1,41 ; 1/sin 30° = 2 ; 1/sin 1° = 57. À Oslo, chaque m² reçoit donc deux fois moins d'énergie qu'à l'équateur.</p>
+<p>Les diapos 21-22 montrent aussi la <b>ZCIT</b> (zone de convergence intertropicale), bande nuageuse qui suit le Soleil autour de l'équateur.</p>
+<h2>2.2.2 Obliquité et insolation</h2>
+<p>En moyenne annuelle, quand l'obliquité augmente, les pôles reçoivent plus d'énergie et l'équateur un peu moins : les variations sont « en phase » aux pôles et « en opposition de phase » à l'équateur.</p>
+
+<h2>2.3 Les saisons</h2>
+<h3>La déclinaison solaire</h3>
+<p>La <b>déclinaison</b> δ est l'angle entre la direction Terre-Soleil et le plan de l'équateur. Elle vient de l'inclinaison de l'axe. Elle varie au cours de l'année entre +23,45° (juin) et −23,45° (décembre). Formule de Cooper (1969), avec J le numéro du jour (1 à 366) :</p>
+<div class="formula">δ = 23,45° × sin[ 360° × (284 + J) / 365 ]<small>δ positive quand le Soleil est au-dessus de l'hémisphère Nord, négative au-dessus de l'hémisphère Sud</small></div>
+<h3>Solstices et équinoxes</h3>
+<table>
+<tr><th></th><th>Solstice</th><th>Équinoxe</th></tr>
+<tr><td>Définition</td><td>déclinaison <b>maximale</b> (±23,45°) : plus grand écart jour/nuit</td><td>déclinaison <b>nulle</b> : jour = nuit = 12 h partout</td></tr>
+<tr><td>Soleil au zénith au-dessus de</td><td>un <b>tropique</b> (Cancer en juin, Capricorne en décembre)</td><td>l'<b>équateur</b></td></tr>
+<tr><td>Dates</td><td>~21 juin (été boréal, à Paris ~16 h de jour) ; ~21 décembre (hiver boréal, ~8 h de jour)</td><td>~20 mars (printemps) ; ~22 septembre (automne)</td></tr>
+<tr><td>Aux pôles</td><td>jour ou nuit permanents au-delà des cercles polaires (le cercle polaire est tangent à la limite jour/nuit)</td><td>l'axe de rotation est dans le plan de la limite jour/nuit</td></tr>
+</table>
+<p>Le graphique d'insolation (latitude × mois) du cours montre qu'à saison égale, l'<b>hémisphère austral reçoit un peu plus</b> que l'hémisphère boréal, surtout en été aux hautes latitudes : >1 100 cal/cm²/jour sur le pôle Sud en décembre contre ~1 000 sur le pôle Nord en juillet. Raison : en décembre, la Terre est au périhélie (plus proche du Soleil).</p>
+<div class="box trap"><b class="t">⚠️ La distance Terre-Soleil fait-elle les saisons ? NON.</b>Les deux hémisphères ont des saisons <b>opposées</b> au même moment, à la même distance du Soleil. C'est l'<b>inclinaison de l'axe</b> qui fait les saisons.</div>
+
+<h2>2.4 Angle d'incidence et durée du jour</h2>
+<p>L'<b>incidence solaire</b> i (ou hauteur du Soleil) est l'angle entre les rayons et le plan de l'horizon. Plus i est grand, plus l'énergie reçue par m² est grande. Le Soleil est au <b>zénith</b> quand i = 90°. Entre les tropiques, cela arrive au moins une fois par an partout, et deux fois à l'équateur (aux équinoxes).</p>
+<p>À midi solaire, à la latitude L :</p>
+<div class="formula">si δ et L dans des hémisphères <b>différents</b> : i = 90° − |δ + L|<br>si δ et L dans le <b>même</b> hémisphère : i = 90° − |δ − L|<small>(on prend δ et L en valeur positive, et on regarde de quel côté de l'équateur ils sont)</small></div>
+<details class="ex"><summary>Exercice (cours 3, diapo 37) — Le 22/12, δ = 23°27' S. Calculer i à midi pour 70° N et 30° S</summary>
+<p>23°27' = 23 + 27/60 = 23,45°.</p>
+<div class="steps">
+<div class="step"><b>70° N</b> : hémisphères différents → i = 90 − (23,45 + 70) = <span class="ans">−3,45°</span>. Négatif : le Soleil reste <b>sous l'horizon</b> même à midi. C'est la <b>nuit polaire</b> (70° N est au-delà du cercle polaire).</div>
+<div class="step"><b>30° S</b> : même hémisphère → i = 90 − |23,45 − 30| = 90 − 6,55 = <span class="ans">83,45°</span>. Soleil presque au zénith : c'est l'été austral.</div>
+<div class="step"><b>2ᵉ façon</b> pour 30° S : le Soleil est au zénith sur le tropique du Capricorne (23,45° S). On est 6,55° plus au sud, donc le Soleil est 6,55° plus bas que le zénith : 90 − 6,55 = 83,45°.</div>
+</div></details>
+
+<h3>Les tableaux du cours (diapo 38)</h3>
+<p><b>Angle d'incidence à midi</b> :</p>
+<table><tr><th>Date</th><th>90° S</th><th>66°33' S</th><th>23°27' S</th><th>Équateur</th><th>23°27' N</th><th>66°33' N</th><th>90° N</th></tr>
+<tr><td>22/12 solstice</td><td>23°27'</td><td>46°54'</td><td>90°</td><td>66°33'</td><td>43°06'</td><td>nuit</td><td>nuit</td></tr>
+<tr><td>21/3 équinoxe</td><td>coucher</td><td>23°27'</td><td>66°33'</td><td>90°</td><td>66°33'</td><td>23°27'</td><td>lever</td></tr>
+<tr><td>21/6 solstice</td><td>nuit</td><td>nuit</td><td>43°06'</td><td>66°33'</td><td>90°</td><td>46°54'</td><td>23°27'</td></tr>
+<tr><td>23/9 équinoxe</td><td>lever</td><td>23°27'</td><td>66°33'</td><td>90°</td><td>66°33'</td><td>23°27'</td><td>coucher</td></tr></table>
+<p><b>Durée du jour</b> :</p>
+<table><tr><th>Date</th><th>90° S</th><th>66°33' S</th><th>23°27' S</th><th>Équateur</th><th>23°27' N</th><th>66°33' N</th><th>90° N</th></tr>
+<tr><td>22/12 solstice</td><td>24 h</td><td>24 h</td><td>13,4 h</td><td>12 h</td><td>10,5 h</td><td>0 h</td><td>0 h</td></tr>
+<tr><td>21/3 et 23/9 équinoxes</td><td>12 h</td><td>12 h</td><td>12 h</td><td>12 h</td><td>12 h</td><td>12 h</td><td>12 h</td></tr>
+<tr><td>21/6 solstice</td><td>0 h</td><td>0 h</td><td>10,5 h</td><td>12 h</td><td>13,4 h</td><td>24 h</td><td>24 h</td></tr></table>
+<p>Remarque : à l'<b>équateur</b>, il y a toujours 12 h de jour ; aux équinoxes, 12 h partout.</p>
+<h3>Trois mouvements, trois effets (diapo 41)</h3>
+<table><tr><th>Cause</th><th>Effet</th></tr>
+<tr><td>Rotation de la Terre sur elle-même</td><td>variation <b>diurne</b> (jour / nuit)</td></tr>
+<tr><td>Inclinaison de l'axe + révolution autour du Soleil</td><td>variations <b>saisonnières</b></td></tr>
+<tr><td>Inclinaison de l'axe + forme sphérique</td><td><b>zones climatiques</b> (variation selon la latitude)</td></tr></table>
+<div class="box idea"><b class="t">💡 Pourquoi fait-il plus chaud en été qu'en hiver ?</b>Pour deux raisons : (1) le Soleil est <b>plus haut</b> (angle plus grand → l'énergie d'un faisceau est concentrée sur une plus petite surface) et (2) les <b>jours sont plus longs</b> (on chauffe plus longtemps).<br><br><i>Question bonus du cours :</i> pourquoi fait-il plus chaud le 14 septembre que le 11 mars, alors que le Soleil a à peu près la même hauteur ? Parce que les océans et les sols ont une <b>inertie thermique</b> : en septembre ils restent chauds de tout l'été, en mars ils sont encore froids de l'hiver.</div>
+<div class="box keep"><b class="t">✅ Pour résumer</b><ul>
+<li>La <b>sphéricité</b> explique les différences d'insolation selon la latitude.</li>
+<li>L'<b>inclinaison de l'axe</b> fait varier la durée du jour et l'angle d'incidence → variations saisonnières d'insolation → <b>les saisons</b>.</li>
+<li>Déplacement sur l'orbite + inclinaison = succession des saisons.</li>
+<li>Solstice : jour le plus long/court, Soleil à la verticale d'un tropique. Équinoxe : jour = nuit partout, Soleil à la verticale de l'équateur.</li></ul></div>
+<div class="chapblock" data-ch="a5"></div>
+<div class="pager"><a href="#a4"><span>← Précédent</span>Orbite &amp; Milankovic</a><a class="next" href="#a6"><span>Suivant →</span>Redistribution &amp; climats</a></div>
+</section>
+
+<!-- ===================== A6 ===================== -->
+<section class="page" id="a6">
+<div class="kicker">Partie A · Chapitres 2.5 à 2.7</div>
+<h1>Redistribution de la chaleur, circulation et climats</h1>
+<p class="lead">Les tropiques reçoivent plus d'énergie qu'ils n'en perdent, les pôles l'inverse. Pourtant, les tropiques ne chauffent pas sans fin et les pôles ne gèlent pas toujours plus : l'atmosphère et l'océan transportent la chaleur de l'un vers l'autre.</p>
+
+<h2>2.5 Un bilan déséquilibré selon la latitude</h2>
+<p>Les satellites mesurent, au sommet de l'atmosphère, l'énergie reçue et émise selon la latitude :</p>
+<ul><li><b>Zone intertropicale</b> : reçoit plus qu'elle n'émet → <b>excès</b> (accumulation).</li>
+<li><b>Pôles</b> : émettent plus qu'ils ne reçoivent → <b>déficit</b> (perte).</li></ul>
+
+<h2>2.6 Le transport méridien de la chaleur</h2>
+<p>Les « enveloppes fluides » assurent ce transport (du sud au nord et inversement, d'où « méridien ») :</p>
+<div class="box keep"><b class="t">✅ À retenir</b>Aux basses latitudes, l'<b>océan</b> transporte ~40 % ; aux moyennes et hautes latitudes, l'<b>atmosphère</b> transporte ~60 %.</div>
+
+<h3>La structure verticale de l'atmosphère (diapo 44)</h3>
+<table><tr><th>Couche</th><th>Altitude</th><th>Température</th></tr>
+<tr><td>Troposphère</td><td>0 à 8 km (pôles) – 16 km (équateur)</td><td>baisse de ~6,5 °C/km, jusqu'à ~−56 °C à la tropopause</td></tr>
+<tr><td>Stratosphère</td><td>jusqu'à ~50 km</td><td>remonte jusqu'à ~0 °C (absorption des UV par l'ozone, couche vers 20-30 km)</td></tr>
+<tr><td>Mésosphère</td><td>jusqu'à ~85 km</td><td>redescend jusqu'à ~−90 °C (le point le plus froid)</td></tr>
+<tr><td>Thermosphère</td><td>au-delà</td><td>très chaude (&gt; 1 000 °C) mais presque vide ; aurores, satellites</td></tr></table>
+<h3>Les mouvements de l'atmosphère</h3>
+<p>Mouvements <b>horizontaux</b> (dus aux différences de pression : les vents) et <b>verticaux</b> (dus aux différences de densité/température : l'air chaud, léger, monte). Leur combinaison forme des <b>cellules de convection</b> qui transportent chaleur et vapeur d'eau.</p>
+<p>Si la Terre ne tournait pas, il y aurait une seule grande cellule par hémisphère (montée à l'équateur, descente au pôle). À cause de la rotation, il y en a <b>trois par hémisphère</b> :</p>
+<table>
+<tr><th>Cellule</th><th>Latitudes</th><th>Fonctionnement</th></tr>
+<tr><td><b>Hadley</b></td><td>0° – 30°</td><td>l'air chaud et humide monte à l'équateur (basses pressions, pluies, <b>ZCIT</b> = zone de convergence intertropicale), redescend sec vers 30° (hautes pressions → déserts). Au sol : les <b>alizés</b>.</td></tr>
+<tr><td><b>Ferrel</b></td><td>30° – 60°</td><td>cellule « entraînée » ; vents d'ouest aux latitudes tempérées</td></tr>
+<tr><td><b>Polaire</b></td><td>60° – 90°</td><td>l'air froid descend au pôle et repart vers 60°</td></tr>
+</table>
+
+<p><b>Le moteur de la cellule de Hadley</b> (diapo 46) : à l'équateur, l'air chaud et humide monte (basses pressions) ; en montant il se refroidit, la vapeur se condense : nuages et fortes pluies. En altitude (~16 km), l'air sec part vers les pôles, redescend vers ±30° (hautes pressions), se réchauffe en descendant : air sec → <b>déserts</b> (Sahara, désert de Sonora). Au sol, l'air revient vers l'équateur : les alizés, qui se rechargent en humidité par évaporation.</p>
+<p><b>Les vents au sol</b> (diapo 50), du pôle vers l'équateur : vents d'est polaires (60-90°), vents d'ouest (30-60°), alizés du nord-est (hémisphère Nord) et du sud-est (hémisphère Sud) qui convergent dans la ZCIT.</p>
+<h3>La force de Coriolis</h3>
+<p>Gaspard-Gustave Coriolis (1792-1843) a décrit cette force « d'inertie » : dans un référentiel qui tourne (la Terre), un objet en mouvement semble dévié, perpendiculairement à sa vitesse. En 1851, Léon Foucault l'a rendue visible avec un pendule de 65 m au Panthéon : le plan d'oscillation tourne, ce qui prouve la rotation de la Terre.</p>
+<div class="formula">F<sub>C</sub> = 2 m Ω v sin λ<small>m masse, Ω vitesse angulaire de la Terre, v vitesse du corps, λ latitude</small></div>
+<ul>
+<li><b>Hémisphère Nord</b> : déviation vers la <b>droite</b> ; <b>hémisphère Sud</b> : vers la <b>gauche</b>.</li>
+<li>Nulle à l'<b>équateur</b> (sin 0 = 0), maximale aux <b>pôles</b>.</li>
+<li>L'effet est d'autant plus marqué que le mouvement est lent et dure longtemps sur de grandes distances : il est donc important dans l'<b>océan</b> et aux grandes latitudes.</li>
+</ul>
+<div class="box analogy"><b class="t">🔎 Image mentale</b>Sur un manège qui tourne, tu lances une balle tout droit vers un ami en face : pendant que la balle vole, le manège tourne sous elle, et pour vous deux elle semble partir sur le côté.</div>
+
+<h3>La circulation océanique</h3>
+<p><b>En surface</b> : les courants sont entraînés par les vents (frottements). À cause de Coriolis, l'eau est déviée vers la droite (H. Nord) ou la gauche (H. Sud). La déviation augmente avec la profondeur : c'est la <b>spirale d'Ekman</b> (sur ~100 m). Le transport net de l'eau (« transport d'Ekman ») se fait à <b>90°</b> de la direction du vent.</p>
+<p><b>En profondeur</b> : les masses d'eau se déplacent à cause de différences de <b>densité</b>, dues à la température et à la salinité (circulation <b>thermohaline</b>) : l'eau froide et salée, dense, plonge aux hautes latitudes et circule lentement au fond des océans.</p>
+
+<div class="box keep"><b class="t">✅ Pour résumer</b><ul>
+<li>Bilan radiatif = énergie reçue − (énergie réfléchie + infrarouge émis).</li>
+<li>Son inégalité selon la latitude explique la répartition zonale des températures : climats chauds entre les tropiques, froids aux pôles.</li>
+<li>Atmosphère et hydrosphère transportent la chaleur des basses vers les hautes latitudes (et le froid en sens inverse).</li>
+<li>Coriolis ajoute une déviation est-ouest (longitudinale).</li></ul></div>
+
+<h2>2.7 Les ceintures climatiques</h2>
+<table>
+<tr><th>Zone</th><th>Critère</th></tr>
+<tr><td><b>Polaire</b>, constamment froide</td><td>pas d'été thermique : aucun mois avec une température moyenne &gt; 10 °C</td></tr>
+<tr><td><b>Tropicale</b>, constamment chaude</td><td>pas d'hiver thermique : aucun mois avec une température moyenne &lt; 16 °C</td></tr>
+<tr><td><b>Tempérée</b> (intermédiaire)</td><td>alternance hiver / été au cours de l'année</td></tr>
+</table>
+<p>La carte des grands types de climats (diapo 57) distingue : <b>équatorial</b>, <b>tropical</b>, <b>mousson</b>, <b>méditerranéen</b>, <b>océanique</b>, <b>chinois</b> (subtropical humide), <b>aride</b>, <b>continental</b>, <b>montagnard</b> et <b>polaire</b>. En plus de la latitude, ils dépendent de la distance à la mer, du relief et des courants.</p>
+<div class="box idea"><b class="t">💡 La suite du cours d'A.-D. Schmitt</b>Le plan prévoit ensuite : 3. le cycle du carbone, 4. le cycle de l'eau, 5. la biosphère. Les documents ne sont pas encore sur le Moodle ; ce site pourra être complété quand ils seront déposés.</div>
+<div class="chapblock" data-ch="a6"></div>
+<div class="pager"><a href="#a5"><span>← Précédent</span>Saisons</a><a class="next" href="#b0"><span>Suivant →</span>Partie B : la Terre en couches</a></div>
+</section>

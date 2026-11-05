@@ -1,0 +1,138 @@
+<!-- ===================== B8 ===================== -->
+<section class="page" id="b8">
+<div class="kicker sky">Partie B · Chapitre 5 (suite)</div>
+<h1>Transport de la chaleur, convection et géotherme</h1>
+<p class="lead">La chaleur produite à l'intérieur doit sortir. Elle peut voyager par conduction (lentement, de proche en proche) ou par convection (la roche elle-même se déplace, très lentement mais efficacement). Le profil de température qui en résulte s'appelle le géotherme.</p>
+<h2>Trois modes de transfert</h2>
+<ul><li><b>Rayonnement</b> : par la lumière (photons) — le Soleil, un feu, une lave.</li>
+<li><b>Conduction</b> : par vibration de la matière, de proche en proche, du chaud vers le froid.</li>
+<li><b>Convection</b> : par déplacement de matière (mouvement macroscopique).</li></ul>
+<h2>Quelques définitions</h2>
+<table>
+<tr><th>Grandeur</th><th>Définition</th><th>Unité</th></tr>
+<tr><td>Chaleur spécifique C<sub>p</sub></td><td>chaleur pour chauffer 1 kg de 1 K à pression constante (C<sub>v</sub> à volume constant) : ΔQ = C<sub>p</sub> m ΔT</td><td>J·kg⁻¹·K⁻¹</td></tr>
+<tr><td>Dilatation volumique α</td><td>de combien le volume augmente quand on chauffe : α = (1/V)(∂V/∂T)<sub>p</sub></td><td>K⁻¹</td></tr>
+<tr><td>Conductivité thermique k</td><td>capacité à conduire la chaleur</td><td>W·m⁻¹·K⁻¹</td></tr>
+<tr><td>Diffusivité thermique κ = k/(ρC<sub>p</sub>)</td><td>vitesse à laquelle la chaleur se diffuse (conduction / capacité à stocker)</td><td>m²/s</td></tr>
+<tr><td>Processus <b>adiabatique</b></td><td>sans échange de chaleur (trop rapide pour échanger) — ex. le passage d'une onde sismique</td><td></td></tr>
+</table>
+<h2>La conduction : loi de Fourier</h2>
+<div class="formula">q = −k <span class="frac"><span>∂T</span><span>∂z</span></span><small>q : flux de chaleur (W/m²). Le signe « − » : la chaleur va du chaud vers le froid.</small></div>
+<p>Conductivités thermiques k (W·m⁻¹·K⁻¹, diapo 168) : argent 418 ; péridotite 3,1 ; granite 2,7 ; calcaire 2,5 ; basalte 2,2 ; verre 1,2 ; bois 0,1 ; eau 0,6 (la diapo indique 6, coquille probable). Les roches conduisent mal la chaleur : c'est pour cela que la conduction seule serait trop lente pour refroidir la Terre.</p>
+<p>La chaleur traverse forcément par conduction les <b>couches limites thermiques</b>, à l'interface entre deux milieux. La principale est la <b>lithosphère</b> (&lt; 100 km) : la chaleur de l'intérieur la traverse par conduction avant d'être rayonnée dans l'atmosphère. La couche D″ est une autre couche limite (au-dessus du noyau).</p>
+<details class="ex sky"><summary>Exercice 23 — Géotherme conductif dans la lithosphère continentale</summary>
+<div class="q">Dans les mines, la température augmente d'environ 3 °C tous les 100 m : |∂T/∂z| = 30 °C/km près de la surface.</div>
+<div class="steps sky">
+<div class="step"><b>Q1 – Si ce gradient restait constant</b> jusqu'au centre : T = 30 × 6 371 ≈ <span class="ans">190 000 °C</span>. Absurde (le centre est vers 5 000-6 000 K) : le gradient <b>diminue</b> fortement avec la profondeur, car la convection prend le relais et la chaleur radioactive est concentrée près de la surface.</div>
+<div class="step"><b>Q2 – Flux de chaleur</b>. Équation de la diffusion à l'équilibre : K ∂²T/∂z² + A = 0, avec une production radioactive qui diminue avec la profondeur A = A₀ e<sup>−z/d</sup>. Comme q = −K ∂T/∂z, l'équation devient dq/dz = A = A₀ e<sup>−z/d</sup>. On intègre : q(z) = −A₀ d e<sup>−z/d</sup> + C. Pour z → ∞, q = −q<sub>r</sub>, donc C = −q<sub>r</sub>. En z = 0, q = −q₀ : q₀ = q<sub>r</sub> + A₀d.
+<div class="formula">q(z) = −q<sub>r</sub> − A₀ d e<sup>−z/d</sup> &nbsp;&nbsp; avec &nbsp;&nbsp; A₀ = (q₀ − q<sub>r</sub>)/d</div>
+Le flux en surface = flux venant du manteau (q<sub>r</sub>) + chaleur produite dans la croûte (A₀d).</div>
+<div class="step"><b>Q3 – Température</b> : ∂T/∂z = −q/K = [q<sub>r</sub> + A₀d e<sup>−z/d</sup>]/K. On intègre avec T(0) = T₀ :
+<div class="formula">T(z) = T₀ + <span class="frac"><span>q<sub>r</sub> z</span><span>K</span></span> + <span class="frac"><span>A₀ d²</span><span>K</span></span>(1 − e<sup>−z/d</sup>)</div></div>
+<div class="step"><b>Q4 – Application</b> : q<sub>r</sub> = 0,03 W/m², q₀ = 0,068 W/m², d = 10 km, K = 3,35 W·m⁻¹·K⁻¹ → A₀ = 3,8 × 10⁻⁶ W/m³. En prenant T₀ = 10 °C :
+<table><tr><th>z (km)</th><td>0</td><td>10</td><td>20</td><td>50</td><td>100</td></tr><tr><th>T (°C)</th><td>10</td><td>~171</td><td>~287</td><td>~570</td><td>~1 020</td></tr></table>
+Le profil est d'abord raide (≈ 20 °C/km en surface : q₀/K) puis devient une droite de pente q<sub>r</sub>/K ≈ 9 °C/km quand la radioactivité s'épuise.</div>
+</div></details>
+
+<h2>La convection</h2>
+<p>La convection est <b>bien plus efficace</b> que la conduction pour évacuer la chaleur… mais seulement si le gradient de température est plus fort que le <b>gradient adiabatique</b>.</p>
+<h3>Le gradient adiabatique</h3>
+<p>Quand une roche monte, la pression diminue, elle se détend et se refroidit un peu, même sans échanger de chaleur. Le gradient adiabatique est ce refroidissement « naturel » avec la remontée :</p>
+<div class="formula"><span class="frac"><span>∂T</span><span>∂z</span></span><sub>ad</sub> = <span class="frac"><span>α g T</span><span>C<sub>p</sub></span></span></div>
+<table>
+<tr><th>Lieu</th><th>g</th><th>C<sub>p</sub></th><th>α</th><th>T</th><th>Gradient</th></tr>
+<tr><td>Manteau inférieur (1 500 km)</td><td>9,9</td><td>1 200</td><td>14 × 10⁻⁶</td><td>2 400 K</td><td><b>0,3 K/km</b></td></tr>
+<tr><td>Noyau externe (3 300 km)</td><td>10,1</td><td>700</td><td>14 × 10⁻⁶</td><td>4 000 K</td><td>0,8 K/km</td></tr>
+<tr><td>Noyau externe (g moyen = 7)</td><td>7</td><td>700</td><td>14 × 10⁻⁶</td><td>4 000 K</td><td><b>0,55 K/km</b></td></tr>
+</table>
+<h3>Pourquoi faut-il dépasser le gradient adiabatique ?</h3>
+<p>Imagine une petite bulle de roche poussée vers le haut. Elle se refroidit selon le gradient adiabatique.</p>
+<ul>
+<li>Si le gradient réel est <b>plus faible</b> que l'adiabatique : en montant, la bulle devient plus froide que son entourage → plus dense → elle <b>retombe</b>. Stable, pas de convection.</li>
+<li>Si le gradient réel est <b>plus fort</b> (« super-adiabatique ») : la bulle reste plus chaude que son entourage → plus légère → elle <b>continue de monter</b>. Convection !</li>
+</ul>
+<h3>Le nombre de Rayleigh</h3>
+<p>Être super-adiabatique est nécessaire mais pas suffisant : il faut que la poussée d'Archimède l'emporte sur la viscosité (qui freine) et sur la diffusion (qui égalise les températures). Le <b>nombre de Rayleigh</b> (sans dimension) compare ces effets :</p>
+<div class="formula">Ra = <span class="frac"><span>g α h³ ΔT</span><span>ν κ</span></span><small>chauffé par le bas ; pour un fluide chauffé de l'intérieur (production Q) : Ra = g α Q h⁵ / (ν κ k)</small></div>
+<table><tr><th>Favorisent la convection</th><th>S'y opposent</th></tr>
+<tr><td>g (pesanteur), α (dilatation), h (épaisseur de la couche), ΔT (écart de température)</td><td>κ (diffusivité thermique), ν (viscosité cinématique = η/ρ)</td></tr></table>
+<p>Vérification des unités : (m·s⁻² × K⁻¹ × m³ × K) / (m²·s⁻¹ × m²·s⁻¹) = m⁴s⁻²/m⁴s⁻² → sans dimension ✔.</p>
+<div class="box keep"><b class="t">✅ À retenir</b>La convection démarre au-delà d'un <b>Ra critique ≈ 2 000</b> (≈ 10³). Dans le manteau, <b>Ra ≈ 10⁸</b> : le manteau convecte, bien qu'il soit solide (il se déforme de quelques cm par an sur des millions d'années). Effet important : la convection maintient le gradient réel <b>proche du gradient adiabatique</b>.</div>
+<div class="box analogy"><b class="t">🔎 Image mentale</b>Une casserole de miel chauffée par le dessous : si on chauffe peu, la chaleur traverse juste le miel (conduction). Si on chauffe fort, des panaches de miel chaud montent et du miel froid redescend. Le manteau, c'est du « miel » extrêmement visqueux, mais sur des millions d'années il coule.</div>
+
+<h2>Le géotherme</h2>
+<p>Le <b>géotherme</b> est le profil T(z) de la température en fonction de la profondeur. On le construit en deux étapes :</p>
+<div class="steps sky">
+<div class="step"><b>Placer des points d'ancrage</b> (températures connues à certaines profondeurs).</div>
+<div class="step"><b>Relier les points</b> avec les bons gradients : adiabatique dans les zones qui convectent, conductif dans les couches limites.</div>
+</div>
+<h3>Les points d'ancrage</h3>
+<table>
+<tr><th>Profondeur</th><th>Méthode</th><th>Température</th></tr>
+<tr><td>~70 km</td><td><b>géothermobarométrie</b> sur des enclaves de péridotite remontées par les basaltes de points chauds. La répartition de certains éléments entre minéraux dépend de P et T ; la remontée est rapide, ils gardent la « mémoire » de leur profondeur. On compare avec des expériences de labo.</td><td>1 200 – 1 400 °C</td></tr>
+<tr><td>~410 km</td><td>transition olivine α → phase spinelle (diagrammes de phase expérimentaux)</td><td>~1 700 K</td></tr>
+<tr><td>~670 km</td><td>spinelle → pérovskite</td><td>~1 900 K</td></tr>
+<tr><td>~2 750 km</td><td>pérovskite → post-pérovskite (sommet de D″)</td><td>~2 500 K</td></tr>
+<tr><td>~5 150 km</td><td>cristallisation de la graine : point de fusion de l'alliage de fer à 330 GPa</td><td>~5 000 K</td></tr>
+</table>
+<figure>
+<svg viewBox="0 0 640 330" role="img" aria-label="Géotherme schématique">
+<rect width="640" height="330" fill="#fffdf8"/>
+<line x1="70" y1="30" x2="70" y2="290" stroke="#1d2327"/><line x1="70" y1="290" x2="610" y2="290" stroke="#1d2327"/>
+<text x="340" y="320" font-size="13" text-anchor="middle">Profondeur (km)</text>
+<text x="22" y="160" font-size="13" transform="rotate(-90 22 160)" text-anchor="middle">Température (K)</text>
+<g font-size="11" fill="#5b6670"><text x="70" y="305" text-anchor="middle">0</text><text x="155" y="305" text-anchor="middle">1000</text><text x="240" y="305" text-anchor="middle">2000</text><text x="316" y="305" text-anchor="middle">2900</text><text x="400" y="305" text-anchor="middle">4000</text><text x="507" y="305" text-anchor="middle">5150</text><text x="610" y="305" text-anchor="middle">6371</text>
+<text x="62" y="294" text-anchor="end">0</text><text x="62" y="234" text-anchor="end">1500</text><text x="62" y="174" text-anchor="end">3000</text><text x="62" y="114" text-anchor="end">4500</text><text x="62" y="64" text-anchor="end">5800</text></g>
+<rect x="306" y="30" width="10" height="260" fill="#f6e7dc"/>
+<polyline fill="none" stroke="#a8321e" stroke-width="3" points="70,278 76,232 105,222 127,214 299,190 316,140 507,90 610,82"/>
+<g fill="#1f5d8c"><circle cx="76" cy="232" r="4"/><circle cx="105" cy="222" r="4"/><circle cx="127" cy="214" r="4"/><circle cx="304" cy="190" r="4"/><circle cx="507" cy="90" r="4"/></g>
+<g font-size="11"><text x="80" y="250">lithosphère : conduction (raide)</text><text x="135" y="180">manteau : adiabatique (0,3 K/km)</text><text x="322" y="168">D″ : couche limite (saut)</text><text x="380" y="108">noyau externe : adiabatique</text><text x="515" y="74">graine</text></g>
+</svg>
+<figcaption>Géotherme schématique : points d'ancrage (bleu), gradients adiabatiques dans les zones convectives et forts gradients dans les couches limites (lithosphère, D″).</figcaption>
+</figure>
+<div class="box keep"><b class="t">✅ Ce qu'il faut savoir dire</b>Profils de <b>conduction</b> dans la graine et les couches limites ; profil <b>adiabatique</b> dans chaque zone qui convecte ; points d'ancrage aux transitions de phase (410, 660, 2 750, 5 150 km) ; possibles anomalies chimiques à la base du manteau avec un fort effet thermique ; pas de couche limite thermique dans la zone de transition. (Exercice 24 : construire ce géotherme.)</div>
+<div class="chapblock" data-ch="b8"></div>
+<div class="pager"><a href="#b7"><span>← Précédent</span>Chaleur</a><a class="next" href="#b9"><span>Suivant →</span>Terre 3D</a></div>
+</section>
+
+<!-- ===================== B9 ===================== -->
+<section class="page" id="b9">
+<div class="kicker sky">Partie B · Chapitre 6</div>
+<h1>La structure 3D de la Terre et son fonctionnement</h1>
+<p class="lead">Jusqu'ici, on a décrit une Terre en « oignon » (1D : tout ne dépend que de la profondeur). En réalité, à chaque profondeur, il y a des zones plus chaudes et plus froides : c'est la trace de la convection. La tomographie sismique permet de les voir.</p>
+<h2>La tomographie sismique</h2>
+<p>Comme un scanner médical : on fait passer des milliers de rais sismiques dans toutes les directions. Si un rai arrive <b>en avance</b> par rapport au modèle de référence, il a traversé une zone <b>rapide</b> (en général plus <b>froide</b>, donc plus rigide). S'il arrive <b>en retard</b>, la zone est <b>lente</b> (en général plus <b>chaude</b>).</p>
+<details class="ex sky"><summary>Exercice 25 — Mini-tomographie sur 4 cellules</summary>
+<div class="q">4 cellules carrées de 10 km (a en haut à gauche, b en haut à droite, c en bas à gauche, d en bas à droite). Vitesse de référence 6 km/s. 6 rais : 1 = ligne du haut (a, b) ; 2 = ligne du bas (c, d) ; 3 = colonne de gauche (a, c) ; 4 = colonne de droite (b, d) ; 5 = diagonale (a, d) ; 6 = diagonale (b, c). Temps mesurés : t₁ = 3,2796 s ; t₂ = 3,3908 ; t₃ = 3,2796 ; t₄ = 3,3908 ; t₅ = 4,7193 ; t₆ = 4,7140.</div>
+<div class="steps sky">
+<div class="step"><b>Temps de référence</b> : rai horizontal ou vertical = 20 km / 6 = 3,333 s ; rai diagonal = 2 × 14,14 km / 6 = 4,714 s.</div>
+<div class="step"><b>Lecture qualitative</b> : rais 1 et 3 en <b>avance</b> → la cellule commune <b>a</b> est rapide. Rais 2 et 4 en <b>retard</b> → la cellule commune <b>d</b> est lente. Rai 6 (b, c) pile à l'heure → b et c ≈ normales. Rai 5 (a, d) presque à l'heure : l'avance de a compense le retard de d.</div>
+<div class="step"><b>Calcul</b> : on écrit t = Σ (longueur dans la cellule / vitesse de la cellule) pour chaque rai (6 équations, 4 inconnues), et on résout. On utilise la « lenteur » s = 1/V pour avoir des équations simples : t₁ = 10(s<sub>a</sub> + s<sub>b</sub>), etc.</div>
+<div class="step"><span class="ans">V<sub>a</sub> = 6,2 km/s (rapide) · V<sub>b</sub> = 6,0 · V<sub>c</sub> = 6,0 · V<sub>d</sub> = 5,8 km/s (lente)</span>.</div>
+</div>
+<p>C'est exactement le principe de la tomographie, avec des millions de rais et de cellules.</p></details>
+
+<h2>Ce que montrent les images du manteau</h2>
+<ul>
+<li>Les <b>plaques plongeantes</b> (« slabs », lithosphère froide qui s'enfonce aux zones de subduction) apparaissent comme des zones rapides. Certaines <b>traversent la limite des 670 km</b> et descendent jusqu'à la base du manteau.</li>
+<li>Pourtant, la <b>géochimie</b> montre que manteau supérieur et manteau inférieur sont deux réservoirs assez séparés (c'est le manteau supérieur qui a fourni l'essentiel de la croûte continentale). Il y a donc un échange, mais limité.</li>
+<li>Les coupes tomographiques (diapo 199) montrent des variations de vitesse des ondes S de seulement <b>±1,5 %</b> autour du modèle moyen : c'est faible, mais cela suffit pour repérer les zones chaudes (lentes, en rouge) et froides (rapides, en bleu).</li>
+<li>À la base du manteau, deux énormes zones chaudes et lentes : les <b>LLSVP</b> (<i>Large Low Shear-Velocity Provinces</i>), sous l'<b>Afrique</b> et sous le <b>Pacifique</b>.</li>
+</ul>
+<h2>La dynamique globale</h2>
+<p>La convection du manteau inférieur suit un modèle « quadripolaire » :</p>
+<ul>
+<li>deux <b>super-panaches</b> chauds forment deux dômes qui montent sous l'Afrique et sous le Pacifique ;</li>
+<li>la matière froide redescend le long d'une ceinture qui suit à peu près les <b>zones de subduction</b> autour du Pacifique ;</li>
+<li>les <b>points chauds profonds</b> (3 dans le Pacifique, 4 dans la zone indo-atlantique) sont ancrés sur le <b>bord</b> des deux super-panaches.</li>
+</ul>
+<div class="box trap"><b class="t">⚠️ « Oubliez les images simples ! »</b>Le schéma scolaire de cellules de convection bien rondes et régulières sous chaque plaque est faux. La réalité est plus complexe :<ul>
+<li>les <b>dorsales</b> sont liées à la convection du manteau <b>supérieur</b> (appauvri) ;</li>
+<li>les basaltes des <b>points chauds</b> et des grandes provinces magmatiques viennent du manteau <b>profond</b>, indépendamment des dorsales ;</li>
+<li>la lithosphère océanique subduite peut entrer dans le manteau inférieur, s'étaler sur la couche <b>D″</b> et y <b>déclencher des panaches</b> profonds ;</li>
+<li>subductions et points chauds assurent le <b>couplage</b> entre manteau inférieur et supérieur.</li></ul></div>
+<p>La diapo 206 résume : les plaques plongent dans le manteau et le traversent parfois entièrement ; à la base, des « piles » denses et des <b>dômes thermochimiques</b> s'élèvent et donnent naissance aux panaches et aux points chauds.</p>
+<div class="box idea"><b class="t">💡 La boucle est bouclée</b>La chaleur interne (chap. 5) fait convecter le manteau (Ra ≈ 10⁸) ; cette convection, vue par la tomographie, fait bouger les plaques, crée les dorsales, les subductions et les points chauds. C'est la machine Terre.</div>
+<div class="chapblock" data-ch="b9"></div>
+<div class="pager"><a href="#b8"><span>← Précédent</span>Convection &amp; géotherme</a><a class="next" href="#exos"><span>Suivant →</span>Exercices corrigés</a></div>
+</section>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Géosciences 1 – Structure de la Terre : le cours expliqué</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f5f0; --paper:#fffdf8; --ink:#1d2327; --muted:#5b6670; --line:#e3ddd1;
+  --earth:#9a4a1f; --earth-soft:#f6e7dc; --sky:#1f5d8c; --sky-soft:#e3eef7;
+  --leaf:#2f6b3f; --leaf-soft:#e3f0e6; --warn:#a8321e; --warn-soft:#fbe6e1;
+  --gold:#8a6a10; --gold-soft:#f8f0d6;
+  --serif:'Source Serif 4',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}
+a{color:var(--sky)}
+.layout{display:grid;grid-template-columns:290px 1fr;min-height:100vh}
+nav.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:#1f262b;color:#d9dee2;padding:22px 16px 40px;font-size:14px}
+nav.side .brand{font-family:var(--serif);font-size:20px;color:#fff;line-height:1.25;margin-bottom:4px}
+nav.side .sub{color:#93a1ab;font-size:12.5px;margin-bottom:18px}
+nav.side h4{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#e9b48f;margin:20px 0 6px}
+nav.side h4.sk{color:#9cc6e8}
+nav.side a{display:block;color:#d9dee2;text-decoration:none;padding:5px 9px;border-radius:6px;line-height:1.35}
+nav.side a:hover{background:#2c363d}
+nav.side a.active{background:#e9b48f;color:#1f262b;font-weight:600}
+nav.side h4.sk + a.active, nav.side a.sk.active{background:#9cc6e8}
+.burger{display:none}
+main{padding:40px 56px 100px;max-width:980px}
+section.page{display:none}
+section.page.show{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--earth)}
+.kicker.sky{color:var(--sky)}
+h1{font-family:var(--serif);font-size:38px;line-height:1.15;margin:6px 0 10px}
+h2{font-family:var(--serif);font-size:26px;margin:38px 0 10px;padding-top:8px;border-top:1px solid var(--line)}
+h3{font-size:18px;margin:26px 0 6px}
+p{margin:10px 0}
+.lead{font-size:18.5px;color:#36414a;font-family:var(--serif)}
+.box{border-radius:12px;padding:14px 18px;margin:16px 0;border:1px solid}
+.box b.t{display:block;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
+.idea{background:var(--sky-soft);border-color:#c3d8ea}.idea b.t{color:var(--sky)}
+.keep{background:var(--leaf-soft);border-color:#c4dccb}.keep b.t{color:var(--leaf)}
+.trap{background:var(--warn-soft);border-color:#f0c6bc}.trap b.t{color:var(--warn)}
+.analogy{background:var(--gold-soft);border-color:#ead9a6}.analogy b.t{color:var(--gold)}
+.box ul{margin:4px 0;padding-left:20px}
+.formula{font-family:var(--serif);font-size:21px;text-align:center;background:var(--paper);border:1px dashed #cdbfa8;border-radius:10px;padding:12px;margin:14px 0}
+.formula small{display:block;font-family:var(--sans);font-size:13px;color:var(--muted);margin-top:4px}
+.frac{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;margin:0 3px;font-size:.92em}
+.frac>span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}
+table{border-collapse:collapse;width:100%;margin:14px 0;font-size:14.5px;background:var(--paper)}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th{background:#efe9de;font-weight:600}
+details.ex{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--earth);border-radius:10px;padding:12px 16px;margin:16px 0}
+details.ex.sky{border-left-color:var(--sky)}
+details.ex summary{cursor:pointer;font-weight:600}
+details.ex summary::marker{color:var(--earth)}
+.q{background:#faf7f1;border-radius:8px;padding:10px 14px;margin:8px 0}
+.step{counter-increment:st;position:relative;padding-left:34px;margin:10px 0}
+.steps{counter-reset:st}
+.step::before{content:counter(st);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--earth);color:#fff;font-size:13px;font-weight:700;display:grid;place-items:center}
+.sky .step::before{background:var(--sky)}
+.ans{font-weight:700;color:var(--leaf)}
+figure{margin:18px 0;text-align:center}
+figure svg{max-width:100%;height:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:6px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:18px 0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);display:block}
+.card:hover{border-color:var(--earth)}
+.card .n{font-size:12px;font-weight:700;color:var(--earth);letter-spacing:.06em}
+.card.s .n{color:var(--sky)}
+.card h3{margin:4px 0 4px;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:#efe9de;margin:2px}
+.src{font-size:13px;color:var(--muted);font-style:italic}
+.pager{display:flex;justify-content:space-between;margin-top:50px;gap:10px}
+.pager a{flex:1;background:var(--paper);border:1px solid var(--line);padding:12px 16px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600}
+.pager a.next{text-align:right}
+.pager a span{display:block;font-size:12px;color:var(--muted);font-weight:500}
+.alert{background:#1f262b;color:#fff;border-radius:12px;padding:16px 20px;margin:18px 0}
+.alert b{color:#e9b48f}
+/* quiz */
+.qz{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:14px 0}
+.qz .qt{font-weight:600;margin-bottom:8px}
+.qz label{display:block;padding:7px 10px;border:1px solid var(--line);border-radius:8px;margin:5px 0;cursor:pointer}
+.qz label:hover{background:#faf7f1}
+.qz label.ok{background:var(--leaf-soft);border-color:#8bbf98}
+.qz label.ko{background:var(--warn-soft);border-color:#e09a8a}
+.qz .why{display:none;font-size:14px;margin-top:8px;color:#36414a}
+.qz.done .why{display:block}
+.btn{background:var(--earth);color:#fff;border:0;border-radius:8px;padding:10px 18px;font-weight:600;font-size:15px;cursor:pointer}
+.btn.alt{background:var(--sky)}
+#score{font-weight:700;font-size:18px;margin-left:12px}
+.gl dt{font-weight:700;margin-top:12px}
+.gl dd{margin:2px 0 0 0;color:#36414a}
+.search{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;font-size:15px;margin:10px 0}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  nav.side{position:fixed;inset:0 25% 0 0;z-index:20;transform:translateX(-105%);transition:.25s;height:100%}
+  nav.side.open{transform:none}
+  .burger{display:block;position:fixed;top:10px;left:10px;z-index:30;background:#1f262b;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:15px}
+  main{padding:60px 18px 80px}
+  h1{font-size:30px}
+}
+</style>
+</head>
+<body>
+<button class="burger" onclick="document.querySelector('nav.side').classList.toggle('open')">☰ Sommaire</button>
+<div class="layout">
+<nav class="side">
+  <div class="brand">Géosciences 1<br>Structure de la Terre</div>
+  <div class="sub">L1 · Université de Strasbourg (EOST) · 2026-2027<br>Le cours entier, expliqué simplement</div>
+  <a href="#accueil">🏠 Accueil &amp; mode d'emploi</a>
+  <a href="#organisation">📅 Organisation, examens, QCM</a>
+  <h4>Partie A · Enveloppes superficielles<br><span style="text-transform:none;letter-spacing:0">A.-D. Schmitt</span></h4>
+  <a href="#a1">1.1–1.2 L'énergie du Soleil</a>
+  <a href="#a2">1.3 Bilan radiatif &amp; effet de serre</a>
+  <a href="#a3">1.4 Effets des activités humaines</a>
+  <a href="#a4">2.1 Orbite &amp; cycles de Milankovic</a>
+  <a href="#a5">2.2–2.4 Latitude, saisons, incidence</a>
+  <a href="#a6">2.5–2.7 Redistribution &amp; climats</a>
+  <h4 class="sk">Partie B · Enveloppes internes<br><span style="text-transform:none;letter-spacing:0">F. Masson</span></h4>
+  <a href="#b0" class="sk">0. La Terre en couches</a>
+  <a href="#b1" class="sk">1. La forme de la Terre</a>
+  <a href="#b2" class="sk">2a. Histoire des modèles</a>
+  <a href="#b3" class="sk">2b. Ondes sismiques &amp; croûte</a>
+  <a href="#b4" class="sk">2c. Manteau, noyau, rais</a>
+  <a href="#b5" class="sk">3. Masse &amp; densité</a>
+  <a href="#b6" class="sk">4. Chimie de la Terre</a>
+  <a href="#b7" class="sk">5. La chaleur de la Terre</a>
+  <a href="#b8" class="sk">5b. Convection &amp; géotherme</a>
+  <a href="#b9" class="sk">6. Terre 3D &amp; dynamique</a>
+  <h4>Réviser</h4>
+  <a href="#exos">✏️ Tous les exercices corrigés</a>
+  <a href="#formules">🧮 Fiche de formules</a>
+  <a href="#glossaire">📖 Glossaire</a>
+  <a href="#parcoeur">🧠 Tout le « par cœur »</a>
+  <a href="#annales">📚 Annales &amp; sujets d'ailleurs</a>
+  <a href="#qcm">✅ Grands QCM (CC1, CC2)</a>
+  <a href="#qcmreel">🎯 QCM format réel (A-E, multi-réponses)</a>
+</nav>
+<main>

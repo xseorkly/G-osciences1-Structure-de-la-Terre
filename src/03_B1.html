@@ -1,0 +1,191 @@
+<!-- ===================== B0 ===================== -->
+<section class="page" id="b0">
+<div class="kicker sky">Partie B · F. Masson · Introduction</div>
+<h1>La Terre en couches : 3 discontinuités, 4 enveloppes</h1>
+<p class="lead">F. Masson ouvre le cours par un défi : « Ce que l'on voit de l'espace. Mais dedans ? 5 minutes pour 10 mots ». De l'espace, on ne voit que la surface. Pourtant on connaît très bien l'intérieur de la Terre, presque uniquement grâce à des mesures indirectes. Voici d'abord le résultat ; les chapitres suivants expliquent comment on l'a obtenu.</p>
+
+<figure>
+<svg viewBox="0 0 800 360" role="img" aria-label="Coupe de la Terre">
+<rect width="800" height="360" fill="#fffdf8"/>
+<g transform="translate(180,180)">
+<circle r="160" fill="#c46a3a"/><circle r="157" fill="#e6a15a"/>
+<circle r="88" fill="#e9c46a"/><circle r="31" fill="#f3e3a2"/>
+<circle r="117" fill="none" stroke="#9a4a1f" stroke-dasharray="4 3"/>
+</g>
+<g font-size="13" fill="#1d2327">
+<line x1="338" y1="178" x2="400" y2="60" stroke="#555"/><text x="405" y="58">Croûte (solide) : 0 → ~7 km (océan) / 30-35 km (continent)</text>
+<text x="405" y="74" fill="#5b6670">Moho (moyenne 38 km)</text>
+<line x1="315" y1="150" x2="400" y2="110" stroke="#555"/><text x="405" y="112">Manteau supérieur (solide) → 670 km</text>
+<line x1="290" y1="180" x2="400" y2="150" stroke="#555"/><text x="405" y="152">Manteau inférieur (solide) → 2 900 km</text>
+<text x="405" y="168" fill="#5b6670">Gutenberg (2 900 km)</text>
+<line x1="230" y1="190" x2="400" y2="205" stroke="#555"/><text x="405" y="208">Noyau externe (LIQUIDE) → 5 100 km</text>
+<text x="405" y="224" fill="#5b6670">Lehmann (5 100 km)</text>
+<line x1="190" y1="182" x2="400" y2="255" stroke="#555"/><text x="405" y="258">Graine (noyau interne, solide) → 6 371 km</text>
+</g>
+</svg>
+<figcaption>Coupe schématique (épaisseurs approximativement à l'échelle sauf la croûte, exagérée).</figcaption>
+</figure>
+
+<h2>Les définitions de base</h2>
+<p>Une <b>discontinuité</b> est une surface où les ondes sismiques sont <b>réfléchies ou réfractées</b> (déviées). On l'interprète comme un changement physique et/ou chimique du milieu.</p>
+<table>
+<tr><th>Discontinuité</th><th>Profondeur</th><th>Sépare</th></tr>
+<tr><td>Mohorovičić (« <b>Moho</b> »)</td><td>~38 km en moyenne (7 sous les océans, 30-35 sous les continents, plus sous les montagnes)</td><td>croûte / manteau</td></tr>
+<tr><td><b>Gutenberg</b></td><td>2 900 km</td><td>manteau / noyau</td></tr>
+<tr><td><b>Lehmann</b></td><td>5 100 km</td><td>noyau externe / graine</td></tr>
+</table>
+<table>
+<tr><th>Enveloppe</th><th>État</th><th>Densité</th><th>Chiffres clés</th></tr>
+<tr><td>Croûte continentale</td><td>solide</td><td>2,7</td><td>30-35 km d'épaisseur</td></tr>
+<tr><td>Croûte océanique</td><td>solide</td><td>3,0</td><td>~7 km</td></tr>
+<tr><td>Manteau</td><td>solide (avec des zones locales de fusion partielle)</td><td>3 à 5,5</td><td><b>83 % du volume</b> de la Terre ; du Moho à 2 900 km</td></tr>
+<tr><td>Noyau externe</td><td><b>liquide</b> — seule partie liquide de la Terre interne</td><td>~10-12</td><td>2 900 → 5 100 km</td></tr>
+<tr><td>Graine</td><td>solide</td><td>~13</td><td>5 100 → 6 371 km (centre)</td></tr>
+</table>
+<div class="box keep"><b class="t">✅ À retenir</b>Le noyau occupe <b>16 % du volume</b> mais <b>31 % de la masse</b> de la Terre, car sa densité (~12) est très supérieure à celle des autres couches.</div>
+<div class="box trap"><b class="t">⚠️ Piège</b>Le manteau est <b>solide</b> ! Les volcans ne viennent pas d'un « océan de magma » : le magma se forme par fusion <b>partielle et locale</b> du manteau ou de la croûte.</div>
+
+<details class="ex sky"><summary>Exercice 1 — Volume et masse de chaque enveloppe (corrigé du Moodle)</summary>
+<div class="q">On prend une Terre sphérique (R<sub>T</sub> = 6 371 km), avec les rayons et densités suivants. Calculer le volume et la masse de chaque enveloppe, vérifier la masse totale, et donner les proportions.</div>
+<p><b>Méthode :</b> volume d'une boule = 4/3 πR³. Pour une coquille, on soustrait la boule intérieure. Pour la croûte : continentale (30 km) sur 30 % de la surface, océanique (10 km) sur 70 %. Le manteau supérieur = ce qui reste.</p>
+<div class="formula">V<sub>NI</sub> = 4/3 π R<sub>NI</sub>³ ;  V<sub>NE</sub> = 4/3 π R<sub>NE</sub>³ − V<sub>NI</sub> ;  V<sub>MI</sub> = 4/3 π R<sub>MI</sub>³ − V<sub>NI</sub> − V<sub>NE</sub><br>V<sub>CC</sub> = 0,3 × [4/3 πR<sub>T</sub>³ − 4/3 π(R<sub>T</sub>−30)³] ; V<sub>CO</sub> = 0,7 × [4/3 πR<sub>T</sub>³ − 4/3 π(R<sub>T</sub>−10)³]<br>V<sub>MS</sub> = 4/3 πR<sub>T</sub>³ − (toutes les autres)</div>
+<p>Masse = volume × masse volumique (densité 13 → 13 000 kg/m³ ; 1 km³ = 10⁹ m³).</p>
+<table>
+<tr><th>Enveloppe</th><th>Rayons (km)</th><th>Densité</th><th>Volume (km³)</th><th>Vol. relatif</th><th>Masse (kg)</th><th>Masse relative</th></tr>
+<tr><td>Noyau interne</td><td>0 – 1 216</td><td>13</td><td>7,53 × 10⁹</td><td>0,70 %</td><td>9,79 × 10²²</td><td>1,64 %</td></tr>
+<tr><td>Noyau externe</td><td>1 216 – 3 486</td><td>11</td><td>1,70 × 10¹¹</td><td>15,69 %</td><td>1,87 × 10²⁴</td><td>31,36 %</td></tr>
+<tr><td>Manteau inférieur</td><td>3 486 – 5 671</td><td>4,7</td><td>5,87 × 10¹¹</td><td>54,15 %</td><td>2,76 × 10²⁴</td><td>46,25 %</td></tr>
+<tr><td>Manteau supérieur</td><td>5 671 – 6 371</td><td>3,9</td><td>3,11 × 10¹¹</td><td>28,72 %</td><td>1,21 × 10²⁴</td><td>20,36 %</td></tr>
+<tr><td>Croûte continentale</td><td>6 341 – 6 371</td><td>2,7</td><td>4,57 × 10⁹</td><td>0,42 %</td><td>1,23 × 10²²</td><td>0,21 %</td></tr>
+<tr><td>Croûte océanique</td><td>6 361 – 6 371</td><td>3,0</td><td>3,57 × 10⁹</td><td>0,33 %</td><td>1,07 × 10²²</td><td>0,18 %</td></tr>
+<tr><th>Total</th><td></td><td></td><th>1,083 × 10¹²</th><th>100 %</th><th>5,96 × 10²⁴</th><th>100 %</th></tr>
+</table>
+<p><span class="ans">Masse totale ≈ 5,96 × 10²⁴ kg</span> : très proche de la vraie masse (5,97 × 10²⁴ kg). Le modèle est cohérent. On voit que le noyau (≈ 16 % du volume) fait ≈ 33 % de la masse, et que la croûte est négligeable (&lt; 1 %).</p></details>
+
+<h2>Comment la Terre s'est formée et organisée</h2>
+<div class="steps sky">
+<div class="step"><b>Il y a ~4,5 milliards d'années</b>, un nuage de gaz et de poussières (une <b>nébuleuse</b>) se contracte sous sa propre gravité : naissance du Système solaire. Localement, la matière s'agglomère en petits corps : les <b>planétésimaux</b>.</div>
+<div class="step"><b>Accrétion</b> : au-delà d'une certaine masse, un planétésimal attire tout ce qui passe près de lui et grossit jusqu'à devenir une planète. Elle s'arrête quand la Terre a « nettoyé » son voisinage.</div>
+<div class="step"><b>Terre magmatique</b> : le bombardement a transformé l'énergie des impacts en chaleur. En quelques dizaines de millions d'années, la planète est très chaude et riche en magma.</div>
+<div class="step"><b>Différenciation</b> (en moins de 100 millions d'années) : les éléments lourds et métalliques (<b>fer, nickel</b>) coulent au centre → <b>noyau</b> ; les <b>silicates</b>, plus légers, restent au-dessus → <b>manteau</b>. C'est un tri des éléments selon leur densité.</div>
+<div class="step"><b>Formation de la croûte</b> : le manteau primitif fond partiellement ; le résidu non fondu donne le manteau actuel, le magma cristallisé donne la croûte (la croûte primitive, probablement continentale, est achevée vers 2 Ga).</div>
+<div class="step"><b>Dégazage</b> : les éléments volatils s'échappent de l'intérieur ; retenus par la gravité, ils forment l'<b>atmosphère</b> et l'<b>hydrosphère</b>.</div>
+</div>
+
+<h2>Zoom sur la partie supérieure : lithosphère et asthénosphère</h2>
+<p>Entre ~100 et 250 km de profondeur, les ondes sismiques (surtout P) <b>ralentissent</b> : c'est la <b>LVZ</b> (<i>Low Velocity Zone</i>, zone à faible vitesse). Explication : à cette profondeur, la courbe de température de la Terre (le <b>géotherme</b>) s'approche très près du <b>solidus</b> de la péridotite (la température où apparaissent les premières gouttes de liquide), sans le croiser. La roche reste solide mais devient « molle ».</p>
+<p>La LVZ sert à définir deux couches, avec trois définitions qui se complètent :</p>
+<table>
+<tr><th>Définition</th><th>Lithosphère</th><th>Asthénosphère</th></tr>
+<tr><td><b>Sismique</b></td><td>au-dessus de la LVZ (0 à ~100 km) : croûte + haut du manteau</td><td>LVZ et reste du manteau supérieur (~100 à 670 km)</td></tr>
+<tr><td><b>Thermique</b></td><td>au-dessus de l'isotherme <b>1 300 °C</b></td><td>sous l'isotherme 1 300 °C (plus profonde, donc à plus de 1 300 °C)</td></tr>
+<tr><td><b>Rhéologique</b></td><td>comportement <b>rigide</b> (cassant = fragile : elle se rompt)</td><td>comportement <b>ductile</b> (se déforme sans casser)</td></tr>
+</table>
+<p>Un <b>isotherme</b> est une surface imaginaire qui relie les points de même température. La <b>rhéologie</b> étudie comment un matériau se déforme sous une contrainte.</p>
+<div class="box keep"><b class="t">✅ Synthèse</b><b>Lithosphère</b> : couche supérieure, ~100 km en moyenne, = croûte + sommet du manteau supérieur, au-dessus de la LVZ et de l'isotherme 1 300 °C, rigide. <b>Asthénosphère</b> : de ~100 à 670 km, inclut la LVZ, sous l'isotherme 1 300 °C, ductile. Les plaques tectoniques sont des morceaux de lithosphère qui glissent sur l'asthénosphère.</div>
+<div class="box trap"><b class="t">⚠️ Ne pas confondre</b>Croûte/manteau (une différence de <b>composition chimique</b>, au Moho) et lithosphère/asthénosphère (une différence de <b>comportement mécanique</b>, vers 100 km). La lithosphère contient la croûte <i>et</i> un morceau de manteau.</div>
+
+<h3>Plus bas dans le manteau</h3>
+<ul>
+<li><b>Zone de transition</b> (410 à 670 km) : deux sauts de vitesse des ondes à 410 et 670 km, dus à des changements de structure cristalline des minéraux (pas de composition). <b>670 km = limite manteau supérieur / manteau inférieur</b> (le manteau inférieur est aussi appelé <b>mésosphère</b>).</li>
+<li><b>Couche D″</b> (« D seconde ») : les ~200 derniers km du manteau, juste au-dessus du noyau. Vitesse moyenne assez stable, mais de fortes variations latérales : elle est très hétérogène et joue un rôle majeur dans la dynamique globale (chap. 6). Modèle de référence : PREM, revu par Lay (2015).</li>
+</ul>
+
+<h2>Comment connaître l'intérieur de la Terre ?</h2>
+<p><b>Observations directes</b> : quasiment impossibles. Le gouffre le plus profond fait ~2,2 km (Krubera-Voronia ; Mirolda ~1,5 km), et le <b>forage le plus profond</b> est celui de <b>Kola</b> (Russie, 1970-1989) : <b>12 262 m</b>, à peine un tiers de l'épaisseur de la croûte locale (35 km). Il a traversé des roches de 2,7 milliards d'années et étudié les discontinuités, la température et la composition de la croûte profonde. On peut aussi observer des roches profondes remontées à la surface par la tectonique.</p>
+<p><b>Observations indirectes</b> : on mesure depuis la surface (ou l'espace) des grandeurs qui dépendent de l'intérieur : magnétisme, flux de chaleur, <b>sismologie</b>, gravimétrie, physique des roches, minéralogie, géochimie… puis on résout des <b>problèmes inverses</b> : retrouver le modèle de Terre qui explique les mesures.</p>
+<div class="box idea"><b class="t">💡 Plan de la suite</b>1 – Forme de la Terre · 2 – Sismologie et structure concentrique · 3 – Masse et modèles de densité · 4 – Chimie · 5 – Chaleur et géotherme · 6 – Structure 3D et fonctionnement global.</div>
+<div class="chapblock" data-ch="b0"></div>
+<div class="pager"><a href="#a6"><span>← Précédent</span>Climats</a><a class="next" href="#b1"><span>Suivant →</span>La forme de la Terre</a></div>
+</section>
+
+<!-- ===================== B1 ===================== -->
+<section class="page" id="b1">
+<div class="kicker sky">Partie B · Chapitre 1</div>
+<h1>La forme de la Terre</h1>
+<p class="lead">Ronde ? Oui, mais pas tout à fait. L'histoire de la mesure de la Terre va de Pythagore aux satellites.</p>
+<h2>Une sphère : Pythagore et Ératosthène</h2>
+<p><b>Pythagore</b> (VIᵉ s. av. J.-C.) propose le premier que la Terre est sphérique. <b>Ératosthène</b> (275-195 av. J.-C.) en fait la première mesure. Au solstice d'été, à midi, le Soleil est exactement à la verticale à <b>Syène</b> (il éclaire le fond d'un puits) alors qu'à <b>Alexandrie</b>, plus au nord, un bâton fait une ombre : les rayons y arrivent avec un angle de <b>7,2°</b>. Les deux villes sont à 5 000 stades (1 stade ≈ 185 m, donc ~925 km).</p>
+<figure>
+<svg viewBox="0 0 640 260" role="img" aria-label="Méthode d'Ératosthène">
+<rect width="640" height="260" fill="#fffdf8"/>
+<circle cx="200" cy="250" r="190" fill="#e3eef7" stroke="#1f5d8c"/>
+<line x1="200" y1="250" x2="200" y2="60" stroke="#1f5d8c" stroke-dasharray="4 3"/>
+<line x1="200" y1="250" x2="152" y2="66" stroke="#1f5d8c" stroke-dasharray="4 3"/>
+<text x="186" y="230" font-size="13">7,2°</text>
+<text x="205" y="55" font-size="13">Syène</text><text x="90" y="62" font-size="13">Alexandrie</text>
+<g stroke="#e0a100" stroke-width="2"><line x1="200" y1="0" x2="200" y2="58"/><line x1="152" y1="0" x2="152" y2="64"/><line x1="300" y1="0" x2="300" y2="40"/></g>
+<text x="310" y="20" font-size="13" fill="#8a6a10">rayons du Soleil parallèles</text>
+<text x="330" y="120" font-size="14">L'angle au centre = l'angle de l'ombre = 7,2°</text>
+<text x="330" y="145" font-size="14">7,2° ↔ 925 km   donc   360° ↔ C</text>
+<text x="330" y="170" font-size="14" fill="#2f6b3f" font-weight="700">C = 360 × 925 / 7,2 = 46 250 km</text>
+</svg>
+<figcaption>Exercice 2 — Les rayons du Soleil sont parallèles : l'angle de l'ombre à Alexandrie est égal à l'angle entre les deux villes vu du centre de la Terre.</figcaption>
+</figure>
+<p>Résultat : 46 250 km, avec une fourchette 36 850 – 48 000 km qui contient la vraie valeur (<b>40 030 km</b> pour un méridien). Excellent pour l'époque !</p>
+<h2>Picard puis Newton : une sphère aplatie</h2>
+<p>En <b>1671</b>, Jean Picard mesure par <b>triangulation</b> la longueur d'un degré de méridien et en déduit un rayon de <b>6 372 km</b> — remarquable.</p>
+<p><b>Newton</b>, avec sa théorie de la gravitation, suppose la Terre « fluide » en rotation (continents et océans sont à peu près au même niveau partout) : la rotation l'écrase aux pôles et la gonfle à l'équateur. Il prédit un <b>ellipsoïde aplati</b> (aplatissement 1/230).</p>
+<table>
+<tr><th>Modèle</th><th>Valeurs</th></tr>
+<tr><td>Sphère</td><td>R = 6 371 km</td></tr>
+<tr><td>Ellipsoïde</td><td>demi-grand axe (équateur) a = 6 378,137 km ; demi-petit axe (pôles) c = 6 356,752 km ; aplatissement (a − c)/a = 0,0034 ≈ 1/300</td></tr>
+<tr><td>Géoïde</td><td>forme réelle au niveau des océans (surface d'égale pesanteur), qui s'écarte de l'ellipsoïde de 100 m au maximum (étudié au 2ᵉ semestre)</td></tr>
+</table>
+<details class="ex sky"><summary>Exercice 3 — Volume de la Terre : sphère ou ellipsoïde ?</summary>
+<div class="steps sky">
+<div class="step">V<sub>sphère</sub> = 4/3 π R³ = 4/3 π × 6 371³ = <span class="ans">1,083 × 10¹² km³</span>.</div>
+<div class="step">V<sub>ellipsoïde</sub> = 4/3 π a² c = 4/3 π × 6 378,137² × 6 356,752 = <span class="ans">1,083 × 10¹² km³</span>.</div>
+<div class="step">Même résultat ! C'est logique : le « rayon moyen » R<sub>T</sub> = 6 371 km est <b>défini</b> pour que la sphère ait le même volume que l'ellipsoïde : 4/3 πR³ = 4/3 πa²c, donc R<sub>T</sub> = ∛(a²c).</div>
+</div></details>
+<h2>Rappel : méridiens et parallèles</h2>
+<p>Un <b>méridien</b> est un demi-cercle qui va d'un pôle à l'autre (il repère la longitude). Un <b>parallèle</b> est un cercle parallèle à l'équateur (il repère la latitude). Tous les méridiens ont la même longueur ; les parallèles rapetissent vers les pôles.</p>
+<details class="ex sky"><summary>Exercice 4 — Longueur d'un degré de méridien et de parallèle</summary>
+<div class="steps sky">
+<div class="step"><b>Méridien</b> : 40 030 km / 360° = <span class="ans">111,19 km par degré</span> de latitude, partout.</div>
+<div class="step"><b>Parallèle</b> à la latitude φ : son rayon est R cos φ, donc 1° = 40 074 × cos φ / 360 km (40 074 km = circonférence équatoriale). À 48,5° : ≈ <span class="ans">73,8 km par degré</span> de longitude.</div>
+<div class="step"><b>Exemples</b> : Strasbourg (48,58° N ; 7,75° E) – Brest (48,4° N ; −4,48° E) : Δlongitude = 12,23° → ≈ <b>900 km</b>. Calais (51,05° N) – Perpignan (42,70° N), quasi même longitude : Δlatitude = 8,35° → 8,35 × 111,19 ≈ <b>929 km</b>.</div>
+</div></details>
+<div class="chapblock" data-ch="b1"></div>
+<div class="pager"><a href="#b0"><span>← Précédent</span>La Terre en couches</a><a class="next" href="#b2"><span>Suivant →</span>Histoire des modèles</a></div>
+</section>
+
+<!-- ===================== B2 ===================== -->
+<section class="page" id="b2">
+<div class="kicker sky">Partie B · Chapitre 2a</div>
+<h1>Comment on a imaginé, puis découvert, l'intérieur de la Terre</h1>
+<p class="lead">Trois époques (d'après V. Deparis) : les Anciens et leur imagination fertile, les premières investigations scientifiques (XVIIIᵉ-XIXᵉ s.), puis la sismologie moderne qui a tout tranché au XXᵉ siècle.</p>
+<h2>1. Les Anciens : des modèles imaginés</h2>
+<table>
+<tr><th>Auteur</th><th>Modèle</th></tr>
+<tr><td>Aristote (IVᵉ s. av. J.-C.)</td><td>la Terre entourée d'eau, puis d'air, puis de feu</td></tr>
+<tr><td>Buridan (1300-1358)</td><td>une sphère d'eau et une sphère de terre décalées</td></tr>
+<tr><td>Descartes (1596-1650)</td><td>un noyau de « matière solaire », puis des couches de terre dense, d'eau, d'air, et une voûte de terre légère au-dessus du vide</td></tr>
+<tr><td>Kircher (1602-1680)</td><td>un ancien Soleil refroidi, avec un foyer central relié aux volcans par des conduits de feu</td></tr>
+<tr><td>Burnet (1635-1715)</td><td>couches de terre et de fluide, noyau de feu ; explique le Déluge</td></tr>
+<tr><td>Woodward (1665-1728)</td><td>une immense sphère d'eau intérieure communiquant avec le fond des océans</td></tr>
+<tr><td>Halley (1656-1743)</td><td>trois coquilles et un noyau aimantés, tournant à des vitesses différentes</td></tr>
+<tr><td>Gautier (1660-1737)</td><td>Terre creuse, comme un ballon, avec un monde possible sur la face intérieure</td></tr>
+</table>
+<h2>2. XVIIIᵉ – XIXᵉ siècle : les premières mesures</h2>
+<ul>
+<li><b>Buffon</b> (1749, 1778) : la Terre est <b>pleine</b>. Preuve : près d'une montagne, un fil à plomb est à peine dévié. Si la Terre était creuse, la montagne pèserait beaucoup par rapport au reste et dévierait fortement le fil. Il affirme aussi qu'elle a été entièrement fondue : forme aplatie (il fallait qu'elle soit malléable), chaleur dans les mines, roches de montagne issues de fusion.</li>
+<li><b>Cordier</b> (1827) : dans les mines, la température augmente de 1 °C tous les 25 m. Si ça continue, il fait 1 600 °C à 50 km : tout serait fondu sous une mince écorce. Cela expliquerait volcans, séismes et montagnes (la Terre se contracte en refroidissant).</li>
+<li><b>Hopkins</b> (1839) : objection ! La température de fusion d'une roche <b>augmente avec la pression</b>. Une roche qui fond à 1 000 °C en surface a besoin de bien plus en profondeur. On ne peut pas conclure sans expériences.</li>
+<li><b>Lord Kelvin</b> (1862) : la Terre est <b>solide</b> ; si elle était liquide à l'intérieur, il y aurait des marées internes énormes qui feraient monter et descendre le sol, ce qu'on n'observe pas.</li>
+<li><b>Fischer</b> : compromis = croûte solide mince, couche fluide mince, noyau solide (modèle « consensuel »).</li>
+<li><b>Densités</b> : <b>Roche</b> (1881), d'après les météorites : un noyau ferreux (densité ~7) sous une couche pierreuse (densité 3). <b>Wiechert</b> (1897) propose un modèle proche. <b>Suess</b> (1909) nomme les couches : <b>nife</b> (noyau, fer + nickel), <b>sima</b> (silicium + magnésium) et <b>sial</b> (continents, silicium + aluminium). Les valeurs sont fausses (compressibilité sous-estimée) mais la logique est bonne.</li>
+</ul>
+<h2>3. Le XXᵉ siècle : la sismologie tranche</h2>
+<p>Les sismographes détectent des <b>ondes de cisaillement</b> (ondes S), qui ne traversent pas les liquides : la partie supérieure du globe est donc un <b>solide élastique</b>. Les géologues doivent revoir leurs explications des volcans et des montagnes.</p>
+<table>
+<tr><th>Date</th><th>Découverte</th><th>Comment</th></tr>
+<tr><td><b>1909</b></td><td><b>Mohorovičić</b> : le Moho</td><td>sous la Croatie, les vitesses sismiques augmentent brusquement vers 54 km : c'est l'interface croûte/manteau</td></tr>
+<tr><td><b>1912</b></td><td><b>Gutenberg</b> : limite noyau/manteau à 2 900 km</td><td>les ondes P sont reçues jusqu'à 105° de l'épicentre, disparaissent entre 105° et 142° (<b>zone d'ombre</b>), puis réapparaissent : elles ont été déviées par une chute brutale de vitesse (le noyau) ; interprétée en 1923</td></tr>
+<tr><td><b>1926</b></td><td><b>Jeffreys</b> : le noyau est <b>liquide</b></td><td>pas grâce à l'absence d'ondes S (critère d'aujourd'hui), mais indirectement : la rigidité moyenne de la Terre, déduite des <b>marées terrestres</b>, est trop faible pour un noyau solide</td></tr>
+<tr><td><b>1936</b></td><td><b>Inge Lehmann</b> : la <b>graine</b></td><td>de faibles ondes P arrivent dans la zone d'ombre : elles s'expliquent par une <b>réflexion</b> sur une partie centrale distincte. Taille fixée en 1938-39 à ~1 200-1 250 km (aujourd'hui 1 221 km). Birch dit en 1940 qu'elle est solide, confirmé dans les années 1960 par les <b>oscillations propres</b> de la Terre</td></tr>
+</table>
+<div class="box keep"><b class="t">✅ À retenir (dates !)</b><b>1909 Moho · 1912 Gutenberg · 1926 noyau liquide (Jeffreys) · 1936 graine (Lehmann)</b>. La structure concentrique de la Terre a été établie par la sismologie dans la 1ʳᵉ moitié du XXᵉ siècle.</div>
+<div class="chapblock" data-ch="b2"></div>
+<div class="pager"><a href="#b1"><span>← Précédent</span>Forme de la Terre</a><a class="next" href="#b3"><span>Suivant →</span>Ondes sismiques &amp; croûte</a></div>
+</section>
