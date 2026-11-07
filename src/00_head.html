@@ -101,6 +101,10 @@ figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
   main{padding:60px 18px 80px}
 }
 </style>
+<script>/* Suivi des ouvertures et des notes -> Google Sheet + e-mail (Apps Script) */
+(()=>{const ENDPOINT='https://script.google.com/macros/s/AKfycbzFxgvSm59K1zOjh4MxUhZjhcE3X_VYW030iU1o6WIB7XBtDqTjbseNtYJjpNkPBslmfw/exec';const SID=Math.random().toString(36).slice(2,10);const OPEN=new Date();let dev;try{dev=localStorage.getItem('ysra.device');if(!dev){dev=Math.random().toString(36).slice(2,10);localStorage.setItem('ysra.device',dev)}}catch(e){dev='inconnu'}
+function send(type,extra){if(!ENDPOINT)return;const body=JSON.stringify(Object.assign({type,site:'Géosciences 1',session:SID,appareil:dev,ouverture:OPEN.toISOString(),quand:new Date().toISOString(),ua:navigator.userAgent},extra||{}));try{fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body})}catch(e){}}
+window.ysraTrack=send;send('ouverture')})();</script>
 </head>
 <body>
 <button class="burger" onclick="document.querySelector('nav.side').classList.toggle('open')">☰ Sommaire</button>

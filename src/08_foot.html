@@ -8,7 +8,7 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 function esc(s){return s}
 // --- moteur de QCM réutilisable
 function makeQuiz(box,list,opts={}){
- box.innerHTML='';let answered=0,good=0;
+ box.innerHTML='';let answered=0,good=0,sent=false;const t0=Date.now();
  const head=document.createElement('div');head.style.cssText='display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:8px 0';
  const sc=document.createElement('span');sc.style.cssText='font-weight:700;font-size:17px';
  const b1=document.createElement('button');b1.className='btn';b1.textContent='Recommencer (mélangé)';
@@ -17,7 +17,7 @@ function makeQuiz(box,list,opts={}){
  const qs=document.createElement('div');box.appendChild(qs);
  const fin=document.createElement('div');fin.className='box keep';fin.style.display='none';box.appendChild(fin);
  function upd(){sc.textContent=answered?('Score : '+good+' / '+answered+(answered===list.length?'  —  '+Math.round(100*good/list.length)+' %':'')):'';
-  if(answered===list.length){fin.style.display='block';const n=Math.round(20*good/list.length*10)/10;fin.innerHTML='<b class="t">Résultat</b>'+good+' bonnes réponses sur '+list.length+' → <b>'+n+' / 20</b>. '+(n>=16?'Excellent, c\'est maîtrisé.':n>=12?'Bien : relis les explications des erreurs.':'Reprends le chapitre et le « par cœur », puis recommence.')}}
+  if(answered===list.length){fin.style.display='block';const n=Math.round(20*good/list.length*10)/10;if(!sent&&window.ysraTrack){sent=true;const ch=box.closest('.chapblock');const lab=opts.label||(ch?'QCM '+(TITLES[ch.dataset.ch]||ch.dataset.ch):'QCM');window.ysraTrack('note',{serie:lab+' ('+n+'/20)',score:good,total:list.length,pourcentage:Math.round(100*good/list.length),a_revoir:'voir le site',duree_min:Math.round((Date.now()-t0)/60000)})}fin.innerHTML='<b class="t">Résultat</b>'+good+' bonnes réponses sur '+list.length+' → <b>'+n+' / 20</b>. '+(n>=16?'Excellent, c\'est maîtrisé.':n>=12?'Bien : relis les explications des erreurs.':'Reprends le chapitre et le « par cœur », puis recommence.')}}
  const oks=[];
  list.forEach((q,n)=>{const [t,o0,ok0,why,src]=q;const ord=shuffle(o0.map((_,i)=>i));const o=ord.map(i=>o0[i]);const ok=ord.indexOf(ok0);oks.push(ok);const d=document.createElement('div');d.className='qz';
   d.innerHTML='<div class="qt">'+(n+1)+'. '+t+(src?' <span class="pill">'+src+'</span>':'')+'</div>';
@@ -52,7 +52,7 @@ const CC2=['a1','a2','a3','a4','a5','a6','b0','b1','b2','b3','b4','b5','b6','b7'
 function pool(ids){const p=[];ids.forEach(id=>(CH[id].qcm||[]).forEach(q=>p.push([q[0],q[1],q[2],q[3],TITLES[id].split(' · ')[1]||id])));return p}
 function startBig(which){const ids=which==='cc1'?CC1:CC2;const n=which==='cc1'?40:60;const p=()=>pool(ids);
  document.getElementById('bigtitle').textContent=(which==='cc1'?'Examen blanc CC1':'Examen blanc CC2')+' — '+n+' questions tirées au hasard parmi '+p().length;
- makeQuiz(document.getElementById('bigquiz'),pick(p(),n),{pool:p,n});
+ makeQuiz(document.getElementById('bigquiz'),pick(p(),n),{pool:p,n,label:which==='cc1'?'Examen blanc CC1':'Examen blanc CC2'});
  document.getElementById('bigtitle').scrollIntoView({behavior:'smooth'});}
 document.querySelectorAll('[data-big]').forEach(b=>b.onclick=()=>startBig(b.dataset.big));
 (function(){const t=document.getElementById('poolinfo');if(t)t.textContent='Banque totale : '+pool(CC2).length+' questions (dont '+pool(CC1).length+' pour le CC1).'})();
@@ -66,7 +66,7 @@ function realQuiz(mode){
  if(mode!=='every')idx=shuffle(idx).slice(0,n);
  const box=document.getElementById('realquiz');box.innerHTML='';
  document.getElementById('realtitle').textContent=(mode==='cc1'?'Sujet type CC1':mode==='all'?'Sujet type CC2':'Toutes les questions')+' — '+idx.length+' questions';
- let done=0,good=0;const sc=document.createElement('div');sc.style.cssText='position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;font-size:17px;z-index:5';box.appendChild(sc);
+ let done=0,good=0;const t0=Date.now(),lab=(mode==='cc1'?'Sujet type CC1':mode==='all'?'Sujet type CC2':'Toutes les questions (format réel)');const sc=document.createElement('div');sc.style.cssText='position:sticky;top:0;background:var(--bg);padding:8px 0;font-weight:700;font-size:17px;z-index:5';box.appendChild(sc);
  const upd=()=>{sc.textContent='Validées : '+done+' / '+idx.length+'  ·  Justes : '+good+(done?'  ·  Note : '+(Math.round(200*good/idx.length)/10)+' / 20':'')};upd();
  idx.forEach((qi,n)=>{const [t,o,ok,why,part,src]=QR[qi];const d=document.createElement('div');d.className='qz';
   d.innerHTML='<div class="qt">'+(n+1)+'. '+t+' <span class="pill">Partie '+part+'</span> <span class="pill">inspiré de : '+src+'</span></div>';
@@ -76,7 +76,7 @@ function realQuiz(mode){
   bt.onclick=()=>{if(d.classList.contains('done'))return;d.classList.add('done');done++;
    const chosen=boxes.map((b,k)=>b[0].checked?k:-1).filter(k=>k>=0);const right=chosen.length===ok.length&&ok.every(k=>chosen.includes(k));if(right)good++;
    boxes.forEach(([cb,l],k)=>{cb.disabled=true;if(ok.includes(k))l.classList.add('ok');else if(cb.checked)l.classList.add('ko')});
-   w.innerHTML=(right?'✅ <b>Juste.</b> ':'❌ <b>Faux.</b> ')+'Bonne(s) réponse(s) : <b>'+ok.map(k=>'ABCDE'[k]).join('')+'</b>. '+why;bt.remove();upd()};
+   w.innerHTML=(right?'✅ <b>Juste.</b> ':'❌ <b>Faux.</b> ')+'Bonne(s) réponse(s) : <b>'+ok.map(k=>'ABCDE'[k]).join('')+'</b>. '+why;bt.remove();upd();if(done===idx.length&&window.ysraTrack)window.ysraTrack('note',{serie:lab+' ('+(Math.round(200*good/idx.length)/10)+'/20)',score:good,total:idx.length,pourcentage:Math.round(100*good/idx.length),a_revoir:'voir le site',duree_min:Math.round((Date.now()-t0)/60000)})};
   box.appendChild(d)});
  document.getElementById('realtitle').scrollIntoView({behavior:'smooth'});
 }
