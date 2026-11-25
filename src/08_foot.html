@@ -84,7 +84,20 @@ document.querySelectorAll('[data-real]').forEach(b=>b.onclick=()=>realQuiz(b.dat
 // glossaire
 document.getElementById('glsearch').addEventListener('input',e=>{const v=e.target.value.toLowerCase();
  document.querySelectorAll('#gl dt').forEach(dt=>{const dd=dt.nextElementSibling;const show=(dt.textContent+dd.textContent).toLowerCase().includes(v);dt.style.display=dd.style.display=show?'':'none'})});
-// routage
+/*AU-JS*/
+// ===== Annales Université de Strasbourg : correction à côté + note =====
+window.addEventListener('load',()=>setTimeout(()=>window.scrollTo(0,0),0));
+document.addEventListener('click',e=>{const b=e.target.closest('.au-show');if(!b)return;const q=b.closest('.au-q');q.classList.add('open');
+ const r=q.querySelector('input:checked');q.classList.add('graded');q.querySelectorAll('label').forEach(l=>{const v=l.querySelector('input').value;l.classList.toggle('ok',v===q.dataset.ans);l.classList.toggle('ko',!!r&&r.value===v&&v!==q.dataset.ans)})});
+document.querySelectorAll('.au-sujet').forEach(s=>{const t0=Date.now();
+ s.querySelector('.au-grade').onclick=()=>{const qs=[...s.querySelectorAll('.au-q')];let good=0,faux=[];
+  qs.forEach(q=>{const r=q.querySelector('input:checked');q.classList.add('open','graded');
+   q.querySelectorAll('label').forEach(l=>{const v=l.querySelector('input').value;l.classList.toggle('ok',v===q.dataset.ans);l.classList.toggle('ko',!!r&&r.value===v&&v!==q.dataset.ans)});
+   if(r&&r.value===q.dataset.ans)good++;else faux.push(q.dataset.id)});
+  const n=qs.length,note=Math.round(200*good/n)/10;s.querySelector('.au-score').textContent=good+' / '+n+' bonnes réponses → '+String(note).replace('.',',')+' / 20';
+  if(window.ysraTrack)window.ysraTrack('note',{serie:s.dataset.label+' ('+note+'/20)',score:good,total:n,pourcentage:Math.round(100*good/n),a_revoir:faux.join(' ')||'rien',duree_min:Math.round((Date.now()-t0)/60000)})};
+ s.querySelector('.au-reset').onclick=()=>{s.querySelectorAll('.au-q').forEach(q=>{q.classList.remove('open','graded');q.querySelectorAll('input').forEach(i=>i.checked=false);q.querySelectorAll('label').forEach(l=>l.classList.remove('ok','ko'))});s.querySelector('.au-score').textContent=''}});
+/*/AU-JS*/// routage
 const pages=[...document.querySelectorAll('section.page')].map(s=>s.id);
 function route(){let h=location.hash.slice(1);if(!pages.includes(h))h='accueil';
  document.querySelectorAll('section.page').forEach(s=>s.classList.toggle('show',s.id===h));

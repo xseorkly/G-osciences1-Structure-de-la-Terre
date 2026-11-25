@@ -100,7 +100,48 @@ figcaption{font-size:.85rem;color:var(--muted);margin-top:6px}
   .burger{display:block;position:fixed;top:10px;left:10px;z-index:30;background:var(--deep);color:#fff;border:0;border-radius:10px;padding:8px 12px;font-size:15px}
   main{padding:60px 18px 80px}
 }
-</style>
+/*AU-CSS*/
+/* ===== Annales Université de Strasbourg ===== */
+@keyframes auBlink{0%,100%{opacity:1}50%{opacity:.25}}
+.au-blink{color:#d50000;font-weight:900;letter-spacing:.04em;animation:auBlink 1s steps(2,start) infinite}
+@media (prefers-reduced-motion:reduce){.au-blink{animation:none}}
+.au-top{display:block;background:#d50000;color:#fff!important;text-decoration:none;text-align:center;font-weight:900;font-size:clamp(1.05rem,2.4vw,1.45rem);letter-spacing:.05em;padding:14px 16px;border-radius:14px;margin:0 0 22px;box-shadow:0 4px 18px rgba(213,0,0,.35);animation:auBlink 1s steps(2,start) infinite}
+.au-top small{display:block;font-size:.8rem;font-weight:600;letter-spacing:0;opacity:.95}
+@media (prefers-reduced-motion:reduce){.au-top{animation:none}}
+nav.side a.au-nav{background:#d50000;color:#fff;font-weight:850;margin:6px 0 10px;animation:auBlink 1s steps(2,start) infinite}
+.au-block{border:3px solid #d50000;border-radius:14px;margin:10px 0 22px;background:#fff5f5}
+.au-block>summary{cursor:pointer;padding:14px 18px;list-style:none}
+.au-block>summary::-webkit-details-marker{display:none}
+.au-block>summary .au-blink{display:block;font-size:clamp(1.15rem,2.6vw,1.6rem)}
+.au-block .au-sub{display:block;color:#7a1f1f;font-weight:600;font-size:.92rem;margin-top:4px}
+.au-body{padding:0 14px 10px}
+.au-q{display:grid;grid-template-columns:1.35fr 1fr;gap:14px;background:#fff;border:1px solid #f0c4c4;border-left:5px solid #d50000;border-radius:12px;padding:12px 14px;margin:12px 0}
+.au-src{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#c62828}
+.au-txt{margin:6px 0 8px;color:var(--deep)}
+.au-opts label{display:block;padding:6px 10px;border:1px solid var(--line);border-radius:9px;margin:4px 0;cursor:pointer;font-size:.95rem}
+.au-opts label:hover{background:var(--shade)}
+.au-opts input{margin-right:4px}
+.au-q.graded label.ok{background:var(--leaf-soft);border-color:#9fcfb6}
+.au-q.graded label.ko{background:var(--warn-soft);border-color:#e3b2a6}
+.au-right{border-left:1px dashed #f0c4c4;padding-left:14px}
+.au-show{border:1px solid #c62828;background:#fff;color:#c62828;border-radius:9px;padding:7px 12px;font-weight:750;cursor:pointer}
+.au-corr{display:none;font-size:.93rem}
+.au-q.open .au-corr{display:block}
+.au-q.open .au-show{display:none}
+.au-good{font-weight:850;color:var(--good);font-size:1.05rem}
+.au-chap{display:inline-block;margin-top:4px;font-size:.85rem;font-weight:650}
+.au-format{background:#fff;border:4px solid #d50000;border-radius:16px;padding:18px 20px;margin:20px 0;box-shadow:0 4px 18px rgba(213,0,0,.18)}
+.au-format-t{color:#d50000;font-weight:900;font-size:clamp(1.1rem,2.6vw,1.5rem);letter-spacing:.02em;line-height:1.25}
+.au-format-g{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.au-format-g div{background:#d50000;color:#fff;border-radius:12px;text-align:center;padding:10px 6px;font-weight:750;line-height:1.25}
+.au-format-g b{display:block;font-size:clamp(2rem,6vw,3rem);line-height:1}
+.au-format p{font-size:1.05rem;margin:6px 0 0}
+.au-score{font-weight:850;font-size:1.1rem;color:var(--deep)}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;font-size:.9em;margin:0 2px}
+.fr>span:first-child{border-bottom:1px solid currentColor;padding:0 3px}
+@media (max-width:900px){main{min-width:0}main table{display:block;overflow-x:auto;max-width:100%}main svg,main img{max-width:100%;height:auto}}
+@media (max-width:760px){.au-q{grid-template-columns:1fr}.au-right{border-left:0;border-top:1px dashed #f0c4c4;padding:10px 0 0}}
+/*/AU-CSS*/</style>
 <script>/* Suivi des ouvertures et des notes -> Google Sheet + e-mail (Apps Script) */
 (()=>{const ENDPOINT='https://script.google.com/macros/s/AKfycbzFxgvSm59K1zOjh4MxUhZjhcE3X_VYW030iU1o6WIB7XBtDqTjbseNtYJjpNkPBslmfw/exec';const SID=Math.random().toString(36).slice(2,10);const OPEN=new Date();let dev;try{dev=localStorage.getItem('ysra.device');if(!dev){dev=Math.random().toString(36).slice(2,10);localStorage.setItem('ysra.device',dev)}}catch(e){dev='inconnu'}
 function send(type,extra){if(!ENDPOINT)return;const body=JSON.stringify(Object.assign({type,site:'Géosciences 1',session:SID,appareil:dev,ouverture:OPEN.toISOString(),quand:new Date().toISOString(),ua:navigator.userAgent},extra||{}));try{fetch(ENDPOINT,{method:'POST',mode:'no-cors',keepalive:true,headers:{'Content-Type':'text/plain'},body})}catch(e){}}
@@ -113,7 +154,7 @@ window.ysraTrack=send;send('ouverture')})();</script>
 <nav class="side">
   <div class="brand"><span class="logo">G1</span><span>Géosciences 1<br>Structure de la Terre</span></div>
   <div class="sub">L1 · Université de Strasbourg (EOST) · 2026-2027<br>Le cours entier, expliqué simplement</div>
-  <a href="#accueil">🏠 Accueil &amp; mode d'emploi</a>
+<!--AU-NAV--><a href="#annales-unistra" class="au-nav">🔴 ANNALES UNISTRA · CC1 &amp; CC2</a><!--/AU-NAV-->  <a href="#accueil">🏠 Accueil &amp; mode d'emploi</a>
   <a href="#organisation">📅 Organisation, examens, QCM</a>
   <h4>Partie A · Enveloppes superficielles · <span>A.-D. Schmitt</span></h4>
   <a href="#a1">1.1–1.2 L'énergie du Soleil</a>
@@ -140,6 +181,7 @@ window.ysraTrack=send;send('ouverture')})();</script>
   <a href="#parcoeur">🧠 Tout le « par cœur »</a>
   <a href="#annales">📚 Annales &amp; sujets d'ailleurs</a>
   <a href="#qcm">✅ Grands QCM (CC1, CC2)</a>
-  <a href="#qcmreel">🎯 QCM format réel (A-E, multi-réponses)</a>
+  <a href="#qcmreel">🎯 QCM renforcé (A-E, multi-réponses)</a>
 </nav>
 <main>
+<!--AU-TOP--><a class="au-top" href="#annales-unistra">🔴 ANNALES UNIVERSITÉ DE STRASBOURG 🔴<small>Les vrais contrôles continus CC1 (nov. 2022) et CC2 (déc. 2022), corrigés et expliqués — clique ici<br>Vrai CC : 4 choix · 1 seule bonne réponse · pas de point négatif</small></a><!--/AU-TOP-->
